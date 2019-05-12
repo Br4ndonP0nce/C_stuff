@@ -1,0 +1,3 @@
+C:/Users/Brandon/CLionProjects/func/cmake-build-debug/CMakeFiles/func.dir
+C:/Users/Brandon/CLionProjects/func/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Brandon/CLionProjects/func/cmake-build-debug/CMakeFiles/rebuild_cache.dir
