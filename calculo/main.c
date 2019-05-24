@@ -1,8 +1,160 @@
+/*
+Practica 31 calculadora de sistemas de numeración2.0
+Brandon Alejandro Ponce Aragon
+20/05/19
+Descripción:Uso masivo de funciones, iteraciones, Formulas para convertir de un tipo de numeracion a otro
+Datos de entrada: Dependiendo de la opcion que se elija se pide un numero decimal,binario o hexadecimal
+Datos de Salida : el numero traducido a binario, hexadecimal o binario.
+Conclusiones y/o comentarios: Un programa muuuuuuuy extenso, pero con las fomulas y procedimientos adecuados, resulta un poco más sencillo.
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
 #include <string.h>
 #define max 1000
+int dec_rom(){
+    int num;
+
+    printf("Inserte un número ");
+    scanf("%d", &num);
+
+    printf("Su numero en romano es:  ");
+
+
+    while(num != 0)
+    {
+
+        if (num >= 1000)
+        {
+            printf("m");
+            num -= 1000;
+        }
+
+        else if (num >= 900)
+        {
+            printf("cm");
+            num -= 900;
+        }
+
+        else if (num >= 500)
+        {
+            printf("d");
+            num -= 500;
+        }
+
+        else if (num >= 400)
+        {
+            printf("cd");
+            num -= 400;
+        }
+
+        else if (num >= 100)
+        {
+            printf("c");
+            num -= 100;
+        }
+
+        else if (num >= 90)
+        {
+            printf("xc");
+            num -= 90;
+        }
+
+        else if (num >= 50)
+        {
+            printf("l");
+            num -= 50;
+        }
+
+        else if (num >= 40)
+        {
+            printf("xl");
+            num -= 40;
+        }
+
+        else if (num >= 10)
+        {
+            printf("x");
+            num -= 10;
+        }
+
+        else if (num >= 9)
+        {
+            printf("ix");
+            num -= 9;
+        }
+
+        else if (num >= 5)
+        {
+            printf("v");
+            num -= 5;
+        }
+
+        else if (num >= 4)
+        {
+            printf("iv");
+            num -= 4;
+        }
+
+        else if (num >= 1)
+        {
+            printf("i");
+            num -= 1;
+        }
+
+    }
+    printf("\n\n\n");
+
+
+    return 0;
+
+}
+
+
+int sum_bin(){
+    long bin1, bin2;
+
+    int i = 0, residuo = 0, sum[20];
+
+
+
+    printf("INgrese 1er numero ");
+
+    scanf("%ld", &bin1);
+
+    printf("INgrese 2ndo numero ");
+
+    scanf("%ld", &bin2);
+
+    while (bin1 != 0 || bin2 != 0)
+
+    {
+
+        sum[i++] =(bin1 % 10 + bin2 % 10 + residuo ) % 2;
+
+        residuo =(bin1 % 10 + bin2 % 10 + residuo) / 2;
+
+        bin1 = bin1 / 10;
+
+        bin2 = bin2 / 10;
+
+    }
+
+    if (residuo != 0)
+
+        sum[i++] = residuo ;
+
+    --i;
+
+    printf("Resultado: ");
+
+    while (i >= 0)
+
+        printf("%d", sum[i--]);
+    printf("\n\n\n");
+    return 0;
+}
+
 int hex_dec(){
     char hex[17];
     long long decimal;
@@ -46,6 +198,7 @@ int hex_dec(){
     return 0;
 
 }
+
 int hex_bin(){
     char hex[max];
     long int i = 0;
@@ -255,7 +408,7 @@ int dec_hex(){
 int main() {
     int choice;
     do {
-        printf("Que numero va a ingresar?\n1.-Decimal->binario\n2.-decimal->hexadecimal\n3.-binario->decimal\n4.-binario->hexadecimal\n5.-hexadecimal->binario\n6.-hexadecimal->decimal\n0.-salir ");
+        printf("Que numero va a ingresar?\n1.-Decimal->binario\n2.-decimal->hexadecimal\n3.-binario->decimal\n4.-binario->hexadecimal\n5.-hexadecimal->binario\n6.-hexadecimal->decimal\n7.-Decimal a romano\n8.-romano a decimal\n9.-sumar binarios\n0.-salir ");
         scanf("%i",&choice);
         switch(choice){
             case 1:
@@ -282,6 +435,17 @@ int main() {
                 system("cls");
                 hex_dec();
                 break;
+            case 7:
+                system("cls");
+                dec_rom();
+                break;
+            /*case 8:
+                rom_dec();
+                break;*/
+            case 9:
+                sum_bin();
+                break;
+
             default:
                 return 0;
 
