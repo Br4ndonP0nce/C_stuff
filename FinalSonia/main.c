@@ -12,11 +12,10 @@ void t(int n){
     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), n);
 }//funcion marco 2
 
-
+char toRead[200]; //defines buffer size
 struct mascota{//struct servicios
-    char nombre[10],tda[20];
-    int edad;
-    float peso;
+    char nombre[10],tda[20],edad[5],peso[5];
+
 }mascotas[20];
 
 struct dueno{//struct Pacientes
@@ -26,15 +25,19 @@ struct dueno{//struct Pacientes
 
 int main() {
 
-    FILE *test = fopen("sonia.txt","w");
+    FILE * source_file;
+    source_file = fopen("sonia.txt","w+");
+    fclose(source_file);
+    if(source_file != NULL){
+
+        source_file = fopen("sonia.txt","a+");
+
+    }
 
 
     int i,op,k,ca =0,x=0;
     int a[50]= {};
     char opc,aux[15],aux2[15];
-
-
-
     system("cls");
     printf("\n\t\t  B I E N V E N I D O\n\t\t ");
     printf("\n\t\t\t   A\n\t\t");
@@ -54,7 +57,6 @@ int main() {
 
     printf("\n\t");
     system("pause");
-
 
     do{
         system("cls");
@@ -85,50 +87,78 @@ int main() {
         switch (opc) {//Incio de switch menu
 
             case '1':
+
                 system("cls");
                 ca++;
                 printf("\n\tNombre del animal: ");
                 fflush(stdin);
-                gets(mascotas[ca].nombre);
+                gets(mascotas[ca].nombre); //FILE just is just able to handle str data type
+                fprintf(source_file, mascotas[ca].nombre);
+
 
                 printf("\n\tTipo de animal: ");
                 fflush(stdin);
                 gets(mascotas[ca].tda);
+                fprintf(source_file, "\n");
+                fprintf(source_file, mascotas[ca].tda);//FILE just is just able to handle str data type
 
                 printf("\n\tEdad: ");
                 fflush(stdin);
-                scanf("%d",&mascotas[ca].edad);
+                gets(mascotas[ca].edad);
+                fprintf(source_file, "\n");
+                fprintf(source_file, mascotas[ca].edad);//FILE just is just able to handle str data type
 
                 printf("\n\tPeso(kg): ");
                 fflush(stdin);
-                scanf("%f",&mascotas[ca].peso);
+                gets(mascotas[ca].peso);
+                fprintf(source_file, "\n");
+                fprintf(source_file, mascotas[ca].peso);//FILE just is just able to handle str data type
 
                 printf("\n\tPropietario: ");
                 fflush(stdin);
                 gets(duenos[ca].nombre);
+                fprintf(source_file, "\n");
+                fprintf(source_file, duenos[ca].nombre);
 
-                printf("\n\tDireccion: " );
+                printf("\n\tDireccion: ");
                 fflush(stdin);
                 gets(duenos[ca].direccion);
+                fprintf(source_file, "\n");
+                fprintf(source_file, duenos[ca].direccion);
 
                 printf("\n\tTelefono: ");
                 fflush(stdin);
                 gets(duenos[ca].telefono);
-                i=0;
+                fprintf(source_file, "\n");
+                fprintf(source_file, duenos[ca].telefono);
+                fprintf(source_file, "\n");
+
+                i = 0;
+                fclose(source_file);  // Each time we finish writing on a file it must be closed
+
                 break;
 
             case '2':
 
                 system("cls");
-                printf("\n\t *LISTA DE ANIMALES*\n\t",test);
-                fclose(test);
+                source_file = ("sonia.txt","r+"); //We then open file in a r+ mode,which is reading
+                if(source_file == NULL){
+                    continue;
+
+                }
+                else;
+                printf("\n\t *LISTA DE ANIMALES*\n\t,");
+                while(fgets(toRead,200,source_file)){ // fgets allow us to read whats in a file it requires 3 arguments(buffer size,maximum size of file, and file top read )
+                    printf("%s",toRead);
+                }
+                fclose(source_file);
                 for(x=1; x<=ca; x++){//Incio for
                     printf("\n\t");
                     printf("Registro NO. %d\n\t",x );
                     printf("Nombre: %s\n\t",mascotas[x].nombre);
                     printf("Tipo de animal: %s\n\t",mascotas[x].tda);
-                    printf("Edad: %d\n\t",mascotas[x].edad);
-                    printf("Peso(kg): %.2f\n\t",mascotas[x].peso);
+                    printf("Edad: %s\n\t",mascotas[x].edad);
+                    printf("Peso(kg): %s\n\t",mascotas[x].peso);
                     printf("Propietario: %s\n\t",duenos[x].nombre);
                     printf("Direccion: %s\n\t",duenos[x].direccion);
                     printf("Telefono %s\n\t",duenos[x].telefono);
@@ -158,8 +188,8 @@ int main() {
                                 printf("\n\tRegistro NO. %d\n\t",x );
                                 printf("Nombre: %s\n\t",mascotas[x].nombre);
                                 printf("Tipo de animal: %s\n\t",mascotas[x].tda);
-                                printf("Edad: %d\n\t",mascotas[x].edad);
-                                printf("Peso(kg): %.2f\n\t",mascotas[x].peso);
+                                printf("Edad: %s\n\t",mascotas[x].edad);
+                                printf("Peso(kg): %s\n\t",mascotas[x].peso);
                                 printf("Propietario: %s\n\t",duenos[x].nombre);
                                 printf("Direccion: %s\n\t",duenos[x].direccion);
                                 printf("Telefono %s\n\t",duenos[x].telefono);
@@ -185,8 +215,8 @@ int main() {
                                 printf("\n\tRegistro NO. %d\n\t",x );
                                 printf("Nombre: %s\n\t",mascotas[x].nombre);
                                 printf("Tipo de animal: %s\n\t",mascotas[x].tda);
-                                printf("Edad: %d\n\t",mascotas[x].edad);
-                                printf("Peso(kg): %.2f\n\t",mascotas[x].peso);
+                                printf("Edad: %s\n\t",mascotas[x].edad);
+                                printf("Peso(kg): %s\n\t",mascotas[x].peso);
                                 printf("Propietario: %s\n\t",duenos[x].nombre);
                                 printf("Direccion: %s\n\t",duenos[x].direccion);
                                 printf("Telefono %s\n\t",duenos[x].telefono);
@@ -212,8 +242,8 @@ int main() {
                                 printf("\n\tRegistro NO. %d\n\t",x );
                                 printf("Nombre: %s\n\t",mascotas[x].nombre);
                                 printf("Tipo de animal: %s\n\t",mascotas[x].tda);
-                                printf("Edad: %d\n\t",mascotas[x].edad);
-                                printf("Peso(kg): %.2f\n\t",mascotas[x].peso);
+                                printf("Edad: %s\n\t",mascotas[x].edad);
+                                printf("Peso(kg): %s\n\t",mascotas[x].peso);
                                 printf("Propietario: %s\n\t",duenos[x].nombre);
                                 printf("Direccion: %s\n\t",duenos[x].direccion);
                                 printf("Telefono %s\n\t",duenos[x].telefono);
@@ -243,8 +273,8 @@ int main() {
                         printf("Registro NO. %d\n\t",x );
                         printf("Nombre: %s\n\t",mascotas[x].nombre);
                         printf("Tipo de animal: %s\n\t",mascotas[x].tda);
-                        printf("Edad: %d\n\t",mascotas[x].edad);
-                        printf("Peso(kg): %.2f\n\t",mascotas[x].peso);
+                        printf("Edad: %s\n\t",mascotas[x].edad);
+                        printf("Peso(kg): %s\n\t",mascotas[x].peso);
                         printf("Propietario: %s\n\t",duenos[x].nombre);
                         printf("Direccion: %s\n\t",duenos[x].direccion);
                         printf("Telefono %s\n\t",duenos[x].telefono);
@@ -275,13 +305,13 @@ int main() {
                             case '3':
                                 printf("\n\tEdad: ");
                                 fflush(stdin);
-                                scanf("%d",&mascotas[x].edad);
+                                gets(mascotas[x].edad);
                                 break;
 
                             case '4':
                                 printf("\n\tIngrese el Peso: ");
                                 fflush(stdin);
-                                scanf("%f",&mascotas[x].peso);
+                               gets(mascotas[x].peso);
                                 break;
 
                             case '5':
@@ -332,8 +362,8 @@ int main() {
                         printf("\n\tRegistro NO. %d\n\t",x );
                         printf("Nombre: %s\n\t",mascotas[x].nombre);
                         printf("Tipo de animal: %s\n\t",mascotas[x].tda);
-                        printf("Edad: %d\n\t",mascotas[x].edad);
-                        printf("Peso(kg): %.2f\n\t",mascotas[x].peso);
+                        printf("Edad: %s\n\t",mascotas[x].edad);
+                        printf("Peso(kg): %sf\n\t",mascotas[x].peso);
                         printf("Propietario: %s\n\t",duenos[x].nombre);
                         printf("Direccion: %s\n\t",duenos[x].direccion);
                         printf("Telefono %s\n\t",duenos[x].telefono);
@@ -342,8 +372,8 @@ int main() {
 
                         strcpy(mascotas[x].nombre,"\0");
                         strcpy(mascotas[x].tda,"\0");
-                        mascotas[x].edad = 0;
-                        mascotas[x].peso= 0;
+                        //mascotas[x].edad = 0;
+                        //mascotas[x].peso= 0;
                         strcpy(duenos[x].nombre,"\0");
                         strcpy(duenos[x].direccion,"\0");
                         strcpy(duenos[x].telefono,"\0");
