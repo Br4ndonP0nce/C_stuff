@@ -1,3 +1,13 @@
+/*Brandon Ponce Aragon
+ * 25/05/2019
+ * Practica 32: 8 reinas
+ * Programa que a manera de un juego permite al usuario intentar resolver el problema de las 8 reinas
+ * Datos de entrada:una respuesta a la fila y una a la comlumna
+ * Datos de Salida:Un tablero que continuamente marca las lineas de ataque de las reinas, y la posicion de las reinas
+ * Formulas
+ * Comentarios:Como trabajo final, fue entretenido, algo extenso, y se vería bonito con colores
+ */
+
 #include<stdlib.h>
 #include<stdio.h>
 int game_mat[8][8];
@@ -29,7 +39,7 @@ int main(){
 
     int cont,cont2,a,b,win=0,x,y,lose,final_count=0,search;
     printf("\t\t8 reinas\n");
-    printf("necesita ingresar 2 numeros: el primero para la FILA Y y el segundo para la COLUMNA \n");
+    printf("necesita ingresar 2 numeros: el primero para la FILA Y y el segundo para la COLUMNA \nPuede presionar 0 para limpiar\n");
     system("pause");
     clean_mat();
     while(win==0){
@@ -39,11 +49,17 @@ int main(){
         system("cls");
         mostrar();
         printf("ingrese un numero para la cordenada X del 1 al 8 y otro para la "
-               "cordenada y de igual forma del 1 al 8\n");
+               "cordenada y de igual forma del 1 al 8\nPuede presionar 0 para limpiar\n");
 
         scanf("%d",&x);
         scanf("%d",&y);
         search=0;
+        if(x == 0 || y == 0){
+            printf("tablero limpiado\n");
+
+            clean_mat();
+
+        }
         if(game_mat[cont][cont2]==game_mat[x-1][y-1]&&game_mat[cont][cont2]==0){
             for(cont=0;cont<8;cont++){
                 for(cont2=0;cont2<8;cont2++){
@@ -87,7 +103,8 @@ int main(){
             win=1;
             system("cls");
 
-            printf("\nganaste!");
+            printf("\nganaste!\n");
+            system("pause");
             mostrar();
         }
         if(search==64&&final_count!=8)
