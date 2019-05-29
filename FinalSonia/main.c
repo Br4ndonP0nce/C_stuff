@@ -26,18 +26,10 @@ struct dueno{//struct Pacientes
 int main() {
 
     FILE * source_file;
-    source_file = fopen("sonia.txt","w+");
-    fclose(source_file);
-    if(source_file != NULL){
-
-        source_file = fopen("sonia.txt","a+");
-
-    }
-
-
-    int i,op,k,ca =0,x=0;
+    int  c_trigger = 0;
+    int i,op,k,ca =0,x=0,contador,contador_;
     int a[50]= {};
-    char opc,aux[15],aux2[15];
+    char opc,aux[15],aux2[15],cambio[50];
     system("cls");
     printf("\n\t\t  B I E N V E N I D O\n\t\t ");
     printf("\n\t\t\t   A\n\t\t");
@@ -67,7 +59,7 @@ int main() {
         printf("4)editar\n\t");
         printf("5)Eliminar\n\t");
         printf("6)Eliminar todos los datos\n\t");
-
+        printf("7)ordenar alfabeticamente\n\t");
         printf("0)Salir\n\t");
         for(int x=1; x<=50; x++){
             gotoxy (x,0);
@@ -84,10 +76,10 @@ int main() {
         opc = getch();
 
 
-        switch (opc) {//Incio de switch menu
+        switch (opc) {//Inicio de switch menu
 
             case '1':
-
+                source_file = fopen("sonia.txt","a");
                 system("cls");
                 ca++;
                 printf("\n\tNombre del animal: ");
@@ -131,7 +123,7 @@ int main() {
                 gets(duenos[ca].telefono);
                 fprintf(source_file, "\n");
                 fprintf(source_file, duenos[ca].telefono);
-                fprintf(source_file, "\n");
+                fprintf(source_file, "\n\n");
 
                 i = 0;
                 fclose(source_file);  // Each time we finish writing on a file it must be closed
@@ -139,20 +131,46 @@ int main() {
                 break;
 
             case '2':
+                if (c_trigger > 0){
+                        source_file = fopen("sonia.txt","w");
+                    for(x=1; x<=ca; x++){//Incio for
+                        printf("\n\t");
+                        printf("Registro NO. %d\n\t",x );
+                        fprintf(source_file,"Registro NO. %d\n\t",x);
+                        printf("Nombre: %s\n\t",mascotas[x].nombre);
+                        fprintf(source_file,"Nombre: %s\n\t",mascotas[x].nombre);
+                        printf("Tipo de animal: %s\n\t",mascotas[x].tda);
+                        fprintf(source_file,"Tipo de animal: %s\n\t",mascotas[x].tda);
+                        printf("Edad: %s\n\t",mascotas[x].edad);
+                        fprintf(source_file,"Edad: %s\n\t",mascotas[x].edad);
+                        printf("Peso(kg): %s\n\t",mascotas[x].peso);
+                        fprintf(source_file,"Peso(kg): %s\n\t",mascotas[x].peso);
+                        printf("Propietario: %s\n\t",duenos[x].nombre);
+                        fprintf(source_file,"Propietario: %s\n\t",duenos[x].nombre);
+                        printf("Direccion: %s\n\t",duenos[x].direccion);
+                        fprintf(source_file,"Direccion: %s\n\t",duenos[x].direccion);
+                        printf("Telefono %s\n\t",duenos[x].telefono);
+                        fprintf(source_file,"Telefono %s\n\t",duenos[x].telefono);
+                        fprintf(source_file,"\n\n\n");
 
+
+                    }//fin for
+                    fclose(source_file);
+
+                }
                 system("cls");
-                source_file = ("sonia.txt","r+"); //We then open file in a r+ mode,which is reading
+                source_file = fopen("sonia.txt","r+"); //We then open file in a r+ mode,which is reading
                 if(source_file == NULL){
                     continue;
 
                 }
                 else;
-                printf("\n\t *LISTA DE ANIMALES*\n\t,");
+                printf("\n\t *LISTA DE ANIMALES*\n\t");
                 while(fgets(toRead,200,source_file)){ // fgets allow us to read whats in a file it requires 3 arguments(buffer size,maximum size of file, and file top read )
                     printf("%s",toRead);
                 }
                 fclose(source_file);
-                for(x=1; x<=ca; x++){//Incio for
+                /*for(x=1; x<=ca; x++){//Incio for
                     printf("\n\t");
                     printf("Registro NO. %d\n\t",x );
                     printf("Nombre: %s\n\t",mascotas[x].nombre);
@@ -162,8 +180,10 @@ int main() {
                     printf("Propietario: %s\n\t",duenos[x].nombre);
                     printf("Direccion: %s\n\t",duenos[x].direccion);
                     printf("Telefono %s\n\t",duenos[x].telefono);
-                }//fin for
-                system("pause");
+
+                 }//fin for
+                    */
+                 system("pause");
                 i=0;
                 break;
 
@@ -368,12 +388,13 @@ int main() {
                         printf("Direccion: %s\n\t",duenos[x].direccion);
                         printf("Telefono %s\n\t",duenos[x].telefono);
 
+
                         system("pause");
 
                         strcpy(mascotas[x].nombre,"\0");
                         strcpy(mascotas[x].tda,"\0");
-                        //mascotas[x].edad = 0;
-                        //mascotas[x].peso= 0;
+                        strcpy(mascotas[x].edad,"\0");
+                        strcpy(mascotas[x].peso, "\0");
                         strcpy(duenos[x].nombre,"\0");
                         strcpy(duenos[x].direccion,"\0");
                         strcpy(duenos[x].telefono,"\0");
@@ -392,12 +413,59 @@ int main() {
                 break;
 
             case '6':
+                source_file = fopen("sonia.txt","w");
+                fclose(source_file);
                 system("cls");
                 printf("\n\tDATOS ELIMINADOS\n\t");
                 system("\n\tpause");
                 ca=0;
                 i=0;
                 break;
+
+            case '7':
+                c_trigger++;
+
+                system("cls||clear");
+                for (contador=0; contador<ca; contador++)
+                    for (contador_=0; contador_<ca; contador_++)
+                    {
+                        if ((strcmp(mascotas[contador_+1].nombre, mascotas[contador_+2].nombre) > 0) && (ca>contador_+1))
+                        {
+                            // Nombre
+                            strcpy(cambio, mascotas[contador_+1].nombre);
+                            strcpy(mascotas[contador_+1].nombre, mascotas[contador_+2].nombre);
+                            strcpy(mascotas[contador_+2].nombre, cambio);
+
+                            // Tipo
+                            strcpy(cambio, mascotas[contador_+1].tda);
+                            strcpy(mascotas[contador_+1].tda, mascotas[contador_+2].tda);
+                            strcpy(mascotas[contador_+2].tda, cambio);
+                            // Edad
+                            strcpy(cambio, mascotas[contador_+1].edad);
+                            strcpy(mascotas[contador_+1].edad, mascotas[contador_+2].edad);
+                            strcpy(mascotas[contador_+2].edad, cambio);
+                            // Peso
+                            strcpy(cambio, mascotas[contador_+1].peso);
+                            strcpy(mascotas[contador_+1].peso, mascotas[contador_+2].peso);
+                            strcpy(mascotas[contador_+2].peso, cambio);
+                            // Propietario
+                            strcpy(cambio, duenos[contador_+1].nombre);
+                            strcpy(duenos[contador_+1].nombre, duenos[contador_+2].nombre);
+                            strcpy(duenos[contador_+2].nombre, cambio);
+                            // Direccion
+                            strcpy(cambio, duenos[contador_+1].direccion);
+                            strcpy(duenos[contador_+1].direccion, duenos[contador_+2].direccion);
+                            strcpy(duenos[contador_+2].direccion, cambio);
+                            // Telefono
+                            strcpy(cambio, duenos[contador_+1].telefono);
+                            strcpy(duenos[contador_+1].telefono, duenos[contador_+2].telefono);
+                            strcpy(duenos[contador_+2].telefono, cambio);
+
+                        }
+                    }
+                system("pause");
+                break;
+
 
             case '0':
                 system("cls");

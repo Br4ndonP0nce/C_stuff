@@ -12,12 +12,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cd3547a1-e2db-47b1-97b2-a373675691d6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../8_queens/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../8_queens/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FinalSonia/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../FinalSonia/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FinalSonia/cmake-build-debug/CMakeFiles/FinalSonia.dir/main.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../FinalSonia/cmake-build-debug/CMakeFiles/FinalSonia.dir/main.c.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FinalSonia/cmake-build-debug/CMakeFiles/FinalSonia.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/../FinalSonia/cmake-build-debug/CMakeFiles/FinalSonia.dir/objects.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FinalSonia/cmake-build-debug/FinalSonia.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../FinalSonia/cmake-build-debug/FinalSonia.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FinalSonia/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/../FinalSonia/main.c" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -109,12 +104,12 @@
       <option name="presentableId" value="Default" />
       <updated>1559066312319</updated>
       <workItem from="1559066314920" duration="3834000" />
-      <workItem from="1559072775085" duration="2481000" />
+      <workItem from="1559072775085" duration="2721000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6315000" />
+    <option name="totallyTimeSpent" value="6555000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="762" y="0" width="781" height="870" extended-state="0" />
