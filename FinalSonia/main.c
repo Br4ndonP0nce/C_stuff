@@ -216,7 +216,7 @@ int main() {
 
                             }//fin de if
                             else if (x==ca && strcmp(aux,mascotas[x].nombre)!=0 ){//inicio else if
-                                printf("No hay ni madres\n");
+                                printf("No encontrado\n");
                             }//fin else if
                         }//fin for
                         system("pause");
@@ -243,7 +243,7 @@ int main() {
 
                             }//fin de if
                             else if (x==ca && strcmp(aux,mascotas[x].tda)!=0 ){//inicio else if
-                                printf("No hay ni madres\n");
+                                printf("No encontrado\n");
                             }//fin else if
                         }//fin for
                         system("pause");
@@ -270,7 +270,7 @@ int main() {
 
                             }//fin de if
                             else if (x==ca && strcmp(aux,duenos[x].nombre)!=0 ){//inicio else if
-                                printf("No hay ni madres\n");
+                                printf("No encontrado\n");
                             }//fin else if
                         }//fin for
                         system("pause");
@@ -365,7 +365,7 @@ int main() {
                         }//fin switch
                     }//fin if
                     else if (x==ca && strcmp(aux,mascotas[x].nombre)!=0 )
-                        printf("No hay ni madres\n");
+                        printf("No encontrado\n");
 
                 }//fin for
                 i=0;
@@ -405,7 +405,7 @@ int main() {
 
                     }//fin de if
                     else if (x==ca && strcmp(aux,mascotas[x].nombre)!=0 ){//inicio else if
-                        printf("No hay ni madres\n");
+                        printf("No encontrado\n");
                     }//fin else if
                 }//fin for
                 system("pause");
