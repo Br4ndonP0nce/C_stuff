@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2018.3.3\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\potencias_punteros.dir/objects.a
+A:\C_compiler\bin\ar.exe cr CMakeFiles\potencias_punteros.dir/objects.a @CMakeFiles\potencias_punteros.dir\objects1.rsp
+A:\C_compiler\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\potencias_punteros.dir/objects.a -Wl,--no-whole-archive  -o potencias_punteros.exe -Wl,--out-implib,libpotencias_punteros.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\potencias_punteros.dir\linklibs.rsp

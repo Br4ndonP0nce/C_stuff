@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Brandon/CLionProjects/Calculadora_punteros/main.cpp
+iostream
+-
+cstdio
+-
+cstdlib
+-
+cstring
+-
+clocale
+-
+conio.h
+C:/Users/Brandon/CLionProjects/Calculadora_punteros/conio.h
+

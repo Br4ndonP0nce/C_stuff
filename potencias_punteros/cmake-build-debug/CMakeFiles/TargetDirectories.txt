@@ -1,0 +1,3 @@
+C:/Users/Brandon/CLionProjects/potencias_punteros/cmake-build-debug/CMakeFiles/potencias_punteros.dir
+C:/Users/Brandon/CLionProjects/potencias_punteros/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Brandon/CLionProjects/potencias_punteros/cmake-build-debug/CMakeFiles/rebuild_cache.dir
