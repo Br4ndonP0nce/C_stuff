@@ -1,0 +1,3 @@
+C:/Users/Brandon/CLionProjects/estructuras_ejemplos/cmake-build-debug/CMakeFiles/estructuras_ejemplos.dir
+C:/Users/Brandon/CLionProjects/estructuras_ejemplos/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Brandon/CLionProjects/estructuras_ejemplos/cmake-build-debug/CMakeFiles/rebuild_cache.dir
