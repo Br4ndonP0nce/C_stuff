@@ -1,3 +1,0 @@
-C:/Users/Brandon/CLionProjects/C_Farenheit/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-C:/Users/Brandon/CLionProjects/C_Farenheit/cmake-build-debug/CMakeFiles/C_Farenheit.dir
-C:/Users/Brandon/CLionProjects/C_Farenheit/cmake-build-debug/CMakeFiles/edit_cache.dir

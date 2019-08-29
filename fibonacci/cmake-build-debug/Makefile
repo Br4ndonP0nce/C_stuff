@@ -47,10 +47,10 @@ RM = "C:\Program Files\JetBrains\CLion 2018.3.3\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\Brandon\CLionProjects\fibonacci
+CMAKE_SOURCE_DIR = C:\Users\Brandon\CLionProjects\Fibonacci
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\Brandon\CLionProjects\fibonacci\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\Brandon\CLionProjects\Fibonacci\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -79,9 +79,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Brandon\CLionProjects\fibonacci\cmake-build-debug\CMakeFiles C:\Users\Brandon\CLionProjects\fibonacci\cmake-build-debug\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Brandon\CLionProjects\Fibonacci\cmake-build-debug\CMakeFiles C:\Users\Brandon\CLionProjects\Fibonacci\cmake-build-debug\CMakeFiles\progress.marks
 	$(MAKE) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Brandon\CLionProjects\fibonacci\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Brandon\CLionProjects\Fibonacci\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -110,44 +110,44 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named fibonacci
+# Target rules for targets named Fibonacci
 
 # Build rule for target.
-fibonacci: cmake_check_build_system
-	$(MAKE) -f CMakeFiles\Makefile2 fibonacci
-.PHONY : fibonacci
+Fibonacci: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 Fibonacci
+.PHONY : Fibonacci
 
 # fast build rule for target.
-fibonacci/fast:
-	$(MAKE) -f CMakeFiles\fibonacci.dir\build.make CMakeFiles/fibonacci.dir/build
-.PHONY : fibonacci/fast
+Fibonacci/fast:
+	$(MAKE) -f CMakeFiles\Fibonacci.dir\build.make CMakeFiles/Fibonacci.dir/build
+.PHONY : Fibonacci/fast
 
-main.obj: main.c.obj
+main.obj: main.cpp.obj
 
 .PHONY : main.obj
 
 # target to build an object file
-main.c.obj:
-	$(MAKE) -f CMakeFiles\fibonacci.dir\build.make CMakeFiles/fibonacci.dir/main.c.obj
-.PHONY : main.c.obj
+main.cpp.obj:
+	$(MAKE) -f CMakeFiles\Fibonacci.dir\build.make CMakeFiles/Fibonacci.dir/main.cpp.obj
+.PHONY : main.cpp.obj
 
-main.i: main.c.i
+main.i: main.cpp.i
 
 .PHONY : main.i
 
 # target to preprocess a source file
-main.c.i:
-	$(MAKE) -f CMakeFiles\fibonacci.dir\build.make CMakeFiles/fibonacci.dir/main.c.i
-.PHONY : main.c.i
+main.cpp.i:
+	$(MAKE) -f CMakeFiles\Fibonacci.dir\build.make CMakeFiles/Fibonacci.dir/main.cpp.i
+.PHONY : main.cpp.i
 
-main.s: main.c.s
+main.s: main.cpp.s
 
 .PHONY : main.s
 
 # target to generate assembly for a file
-main.c.s:
-	$(MAKE) -f CMakeFiles\fibonacci.dir\build.make CMakeFiles/fibonacci.dir/main.c.s
-.PHONY : main.c.s
+main.cpp.s:
+	$(MAKE) -f CMakeFiles\Fibonacci.dir\build.make CMakeFiles/Fibonacci.dir/main.cpp.s
+.PHONY : main.cpp.s
 
 # Help Target
 help:
@@ -155,7 +155,7 @@ help:
 	@echo ... all (the default if no target is provided)
 	@echo ... clean
 	@echo ... depend
-	@echo ... fibonacci
+	@echo ... Fibonacci
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... main.obj

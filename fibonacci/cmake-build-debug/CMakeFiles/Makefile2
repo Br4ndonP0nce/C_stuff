@@ -58,45 +58,45 @@ RM = "C:\Program Files\JetBrains\CLion 2018.3.3\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\Brandon\CLionProjects\fibonacci
+CMAKE_SOURCE_DIR = C:\Users\Brandon\CLionProjects\Fibonacci
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\Brandon\CLionProjects\fibonacci\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\Brandon\CLionProjects\Fibonacci\cmake-build-debug
 
 #=============================================================================
-# Target rules for target CMakeFiles/fibonacci.dir
+# Target rules for target CMakeFiles/Fibonacci.dir
 
 # All Build rule for target.
-CMakeFiles/fibonacci.dir/all:
-	$(MAKE) -f CMakeFiles\fibonacci.dir\build.make CMakeFiles/fibonacci.dir/depend
-	$(MAKE) -f CMakeFiles\fibonacci.dir\build.make CMakeFiles/fibonacci.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\Brandon\CLionProjects\fibonacci\cmake-build-debug\CMakeFiles --progress-num=1,2 "Built target fibonacci"
-.PHONY : CMakeFiles/fibonacci.dir/all
+CMakeFiles/Fibonacci.dir/all:
+	$(MAKE) -f CMakeFiles\Fibonacci.dir\build.make CMakeFiles/Fibonacci.dir/depend
+	$(MAKE) -f CMakeFiles\Fibonacci.dir\build.make CMakeFiles/Fibonacci.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\Brandon\CLionProjects\Fibonacci\cmake-build-debug\CMakeFiles --progress-num=1,2 "Built target Fibonacci"
+.PHONY : CMakeFiles/Fibonacci.dir/all
 
 # Include target in all.
-all: CMakeFiles/fibonacci.dir/all
+all: CMakeFiles/Fibonacci.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/fibonacci.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Brandon\CLionProjects\fibonacci\cmake-build-debug\CMakeFiles 2
-	$(MAKE) -f CMakeFiles\Makefile2 CMakeFiles/fibonacci.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Brandon\CLionProjects\fibonacci\cmake-build-debug\CMakeFiles 0
-.PHONY : CMakeFiles/fibonacci.dir/rule
+CMakeFiles/Fibonacci.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Brandon\CLionProjects\Fibonacci\cmake-build-debug\CMakeFiles 2
+	$(MAKE) -f CMakeFiles\Makefile2 CMakeFiles/Fibonacci.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Brandon\CLionProjects\Fibonacci\cmake-build-debug\CMakeFiles 0
+.PHONY : CMakeFiles/Fibonacci.dir/rule
 
 # Convenience name for target.
-fibonacci: CMakeFiles/fibonacci.dir/rule
+Fibonacci: CMakeFiles/Fibonacci.dir/rule
 
-.PHONY : fibonacci
-
-# clean rule for target.
-CMakeFiles/fibonacci.dir/clean:
-	$(MAKE) -f CMakeFiles\fibonacci.dir\build.make CMakeFiles/fibonacci.dir/clean
-.PHONY : CMakeFiles/fibonacci.dir/clean
+.PHONY : Fibonacci
 
 # clean rule for target.
-clean: CMakeFiles/fibonacci.dir/clean
+CMakeFiles/Fibonacci.dir/clean:
+	$(MAKE) -f CMakeFiles\Fibonacci.dir\build.make CMakeFiles/Fibonacci.dir/clean
+.PHONY : CMakeFiles/Fibonacci.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/Fibonacci.dir/clean
 
 .PHONY : clean
 

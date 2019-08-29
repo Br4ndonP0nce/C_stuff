@@ -1,3 +1,0 @@
-C:/Users/Brandon/CLionProjects/alumnos/cmake-build-debug/CMakeFiles/alumnos.dir
-C:/Users/Brandon/CLionProjects/alumnos/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/Brandon/CLionProjects/alumnos/cmake-build-debug/CMakeFiles/rebuild_cache.dir

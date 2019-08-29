@@ -1,15 +1,15 @@
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
-  "C"
+  "CXX"
   )
 # The set of files for implicit dependencies of each language:
-set(CMAKE_DEPENDS_CHECK_C
-  "C:/Users/Brandon/CLionProjects/fibonacci/main.c" "C:/Users/Brandon/CLionProjects/fibonacci/cmake-build-debug/CMakeFiles/fibonacci.dir/main.c.obj"
+set(CMAKE_DEPENDS_CHECK_CXX
+  "C:/Users/Brandon/CLionProjects/Fibonacci/main.cpp" "C:/Users/Brandon/CLionProjects/Fibonacci/cmake-build-debug/CMakeFiles/Fibonacci.dir/main.cpp.obj"
   )
-set(CMAKE_C_COMPILER_ID "GNU")
+set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
-set(CMAKE_C_TARGET_INCLUDE_PATH
+set(CMAKE_CXX_TARGET_INCLUDE_PATH
   )
 
 # Targets to which this target links.

@@ -1,3 +1,0 @@
-C:/Users/Brandon/CLionProjects/basketball/cmake-build-debug/CMakeFiles/basketball.dir
-C:/Users/Brandon/CLionProjects/basketball/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/Brandon/CLionProjects/basketball/cmake-build-debug/CMakeFiles/rebuild_cache.dir

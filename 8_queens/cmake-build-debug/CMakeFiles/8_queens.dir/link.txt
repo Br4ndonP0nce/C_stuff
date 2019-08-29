@@ -1,3 +1,0 @@
-"C:\Program Files\JetBrains\CLion 2018.3.3\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\8_queens.dir/objects.a
-A:\C_compiler\bin\ar.exe cr CMakeFiles\8_queens.dir/objects.a @CMakeFiles\8_queens.dir\objects1.rsp
-A:\C_compiler\bin\gcc.exe -g   -Wl,--whole-archive CMakeFiles\8_queens.dir/objects.a -Wl,--no-whole-archive  -o 8_queens.exe -Wl,--out-implib,lib8_queens.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\8_queens.dir\linklibs.rsp

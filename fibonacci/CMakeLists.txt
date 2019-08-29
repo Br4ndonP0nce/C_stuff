@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.13)
-project(fibonacci C)
+project(Fibonacci)
 
-set(CMAKE_C_STANDARD 99)
+set(CMAKE_CXX_STANDARD 14)
 
-add_executable(fibonacci main.c)
+add_executable(Fibonacci main.cpp)
