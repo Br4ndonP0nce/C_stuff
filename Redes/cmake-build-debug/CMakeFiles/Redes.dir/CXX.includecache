@@ -15,4 +15,8 @@ string
 -
 cstdlib
 -
+stdio.h
+-
+conio.h
+-
 

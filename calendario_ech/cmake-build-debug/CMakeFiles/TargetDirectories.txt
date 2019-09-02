@@ -1,0 +1,3 @@
+C:/Users/Brandon/CLionProjects/calendario_ech/cmake-build-debug/CMakeFiles/calendario_ech.dir
+C:/Users/Brandon/CLionProjects/calendario_ech/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Brandon/CLionProjects/calendario_ech/cmake-build-debug/CMakeFiles/rebuild_cache.dir
