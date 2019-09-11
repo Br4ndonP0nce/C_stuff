@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Brandon/CLionProjects/Museo/Escultura.h
+ObraArte.h
+C:/Users/Brandon/CLionProjects/Museo/ObraArte.h
+
+C:/Users/Brandon/CLionProjects/Museo/ObraArte.h
+iostream
+-
+
+C:/Users/Brandon/CLionProjects/Museo/Pintura.h
+ObraArte.h
+C:/Users/Brandon/CLionProjects/Museo/ObraArte.h
+iostream
+-
+
+C:/Users/Brandon/CLionProjects/Museo/main.cpp
+iostream
+-
+ObraArte.h
+C:/Users/Brandon/CLionProjects/Museo/ObraArte.h
+Escultura.h
+C:/Users/Brandon/CLionProjects/Museo/Escultura.h
+Pintura.h
+C:/Users/Brandon/CLionProjects/Museo/Pintura.h
+

@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Brandon/CLionProjects/vega/main.cpp
+iostream
+-
+cstdio
+-
+cstdlib
+-
+cstring
+-
+clocale
+-
+conio.h
+C:/Users/Brandon/CLionProjects/vega/conio.h
+math.h
+C:/Users/Brandon/CLionProjects/vega/math.h
+

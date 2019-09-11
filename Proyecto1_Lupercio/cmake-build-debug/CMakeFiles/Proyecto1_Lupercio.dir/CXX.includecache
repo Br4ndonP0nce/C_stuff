@@ -9,10 +9,16 @@
 C:/Users/Brandon/CLionProjects/Proyecto1_Lupercio/main.cpp
 iostream
 -
-string
+cstring
 -
 cstdlib
 -
 cmath
 -
+cstdio
+-
+conio.h
+C:/Users/Brandon/CLionProjects/Proyecto1_Lupercio/conio.h
+math.h
+C:/Users/Brandon/CLionProjects/Proyecto1_Lupercio/math.h
 

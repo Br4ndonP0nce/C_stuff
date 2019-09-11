@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Brandon/CLionProjects/persona/main.cpp
+iostream
+-
+persona.h
+C:/Users/Brandon/CLionProjects/persona/persona.h
+
+C:/Users/Brandon/CLionProjects/persona/persona.h
+

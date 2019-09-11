@@ -1,0 +1,3 @@
+C:/Users/Brandon/CLionProjects/objetos_lupercio/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/Brandon/CLionProjects/objetos_lupercio/cmake-build-debug/CMakeFiles/objetos_lupercio.dir
+C:/Users/Brandon/CLionProjects/objetos_lupercio/cmake-build-debug/CMakeFiles/edit_cache.dir
