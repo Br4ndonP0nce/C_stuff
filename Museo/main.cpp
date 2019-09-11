@@ -6,12 +6,13 @@ using namespace std;
 int const MAX = 10;
 int main() {
     int opc;
-    string titulo;
+    string title;
     string autor;
     string tecnica;
     string material;
-    int year,count = 1,choice_arte;
-    float alto,ancho,peso,volumen;
+    string year;
+    int count_pint = 1,choice_arte=0,count_esc=1;
+    float alto=0,ancho=0,peso,volumen;
     Pintura p;
     Escultura e;
     Escultura esculturas[MAX];
@@ -20,7 +21,8 @@ int main() {
          AGREGAR_PINTURA = 1,
          CONSULTAR_PINTURAS,
          AGREGAR_ESCULTURA,
-         CONSULTAR_ESCULTURA
+         CONSULTAR_ESCULTURA,
+         SALIR
      };
 
      do{
@@ -33,50 +35,93 @@ int main() {
          switch(opc){
              case AGREGAR_PINTURA:
                  cout<<"deme el titulo: "<<endl;
-                 getline(cin,titulo);
-                 //cin.ignore();
+                 cin>>title;
+                 cin.ignore();
                  cout<<"Autor:"<<endl;
                  getline(cin,autor);
-                 //cin.ignore();
                  cout<<"year:\n";
-                 cin>>year;
+                 getline(cin,year);
                  cout<<"Tecnica: \n";
                  getline(cin,tecnica);
-                 cin.ignore();
                  cout<<"Alto:\n";
                  cin>>alto;
                  cout<<"Ancho\n";
                  cin>>ancho;
-                 p.setTitulo(titulo);
+                 p.setTitulo(title);
                  p.setAutor(autor);
                  p.setYear(year);
                  p.setTecnica(tecnica);
                  p.setAlto(alto);
                  p.setAncho(ancho);
-                 pinturas[count]=p;
-                 count++;
+                 pinturas[count_pint]=p;
+                 count_pint++;
                  break;
              case CONSULTAR_PINTURAS:
                  cout<<"que pintura desea ver puede escoger un numero del 1 al 10\n";
                  cin>>choice_arte;
+                 if(choice_arte>count_pint){
+                     cout<<"no hay pintura en el espacio seleccionado\n";
+                     system("pause>>cls");
+                     break;
+                 }
                  cout<<"Titulo: "<<pinturas[choice_arte].getTitulo()<<endl;
                  cout<<"Autor: "<<pinturas[choice_arte].getAutor()<<endl;
                  cout<<"Year: "<<pinturas[choice_arte].getYear()<<endl;
                  cout<<"Tecnica:"<<pinturas[choice_arte].getTecnica()<<endl;
-                 cout<<"Alto: "<<pinturas[choice_arte].getAlto()<<endl;
-                 cout<<"Ancho"<<pinturas[choice_arte].getAncho()<<endl;
+                 cout<<"Alto: "<<pinturas[choice_arte].getAlto()<<"cm"<<endl;
+                 cout<<"Ancho: "<<pinturas[choice_arte].getAncho()<<"cm"<<endl;
+                 system("pause>>cls");
 
                  break;
              case AGREGAR_ESCULTURA:
+                 cout<<"deme el titulo: "<<endl;
+                 cin>>title;
+                 cin.ignore();
+                 cout<<"Autor:"<<endl;
+                 getline(cin,autor);
+                 cout<<"year:\n";
+                 getline(cin,year);
+                 cout<<"Material: \n";
+                 getline(cin,material);
+                 cout<<"Volumen:\n";
+                 cin>>volumen;
+                 cout<<"Peso\n";
+                 cin>>peso;
+                 e.setTitulo(title);
+                 e.setAutor(autor);
+                 e.setYear(year);
+                 e.setMaterial(material);
+                 e.setVolumen(volumen);
+                 e.setPeso(peso);
+                 esculturas[count_pint]=e;
+                 count_pint++;
                  break;
              case CONSULTAR_ESCULTURA:
+                 cout<<"que escultura desea ver puede escoger un numero del 1 al 10\n";
+                 cin>>choice_arte;
+                 if(choice_arte>count_esc){
+                     cout<<"no hay escultura en el espacio seleccionado\n";
+                     system("pause>>cls");
+                     break;
+                 }
+                 cout<<"Titulo: "<<esculturas[choice_arte].getTitulo()<<endl;
+                 cout<<"Autor: "<<esculturas[choice_arte].getAutor()<<endl;
+                 cout<<"Year: "<<esculturas[choice_arte].getYear()<<endl;
+                 cout<<"Material: "<<esculturas[choice_arte].getMaterial()<<endl;
+                 cout<<"Volumen: "<<esculturas[choice_arte].getVolumen()<<"cm3"<<endl;
+                 cout<<"Peso: "<<esculturas[choice_arte].getPeso()<<"kg"<<endl;
+                 system("pause>>cls");
                  break;
+             case SALIR:
+
+                 break;
+
 
          }
 
 
      }
-     while(count<=MAX);
+     while(count_esc<=MAX||count_pint<=MAX);
 
 
 }

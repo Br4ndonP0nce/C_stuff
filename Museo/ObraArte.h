@@ -6,15 +6,15 @@ class ObraArte {
 private:
     string titulo;
     string autor;
-    int year;
+    string year;
 public:
     ObraArte();
     void setTitulo(string valor);
     string getTitulo();
     void setAutor(string author);
     string getAutor();
-    void setYear(int anio);
-    int getYear();
+    void setYear(string anio);
+    string getYear();
 
 };
 

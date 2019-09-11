@@ -1,6 +1,6 @@
 #include "Pintura.h"
 Pintura::Pintura(){
-    tecnica="-";
+    //tecnica="-";
     Ancho=0;
     Alto=0;
 }

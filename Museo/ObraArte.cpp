@@ -1,8 +1,8 @@
 #include "ObraArte.h"
 ObraArte::ObraArte(){
-    titulo="-";
-    autor="-";
-    year =0;
+    //titulo="";
+    //autor="";
+    //year =0;
 }
 void ObraArte::setTitulo(string valor) {
     this->titulo=valor;
@@ -18,9 +18,9 @@ void ObraArte::setAutor(string author){
 string ObraArte::getAutor(){
     return autor;
 }
-void ObraArte::setYear(int anio){
+void ObraArte::setYear(string anio){
     this->year=anio;
 }
-int ObraArte::getYear(){
+string ObraArte::getYear(){
     return year;
 }
