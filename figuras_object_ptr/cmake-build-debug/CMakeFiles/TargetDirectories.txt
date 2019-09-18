@@ -1,0 +1,3 @@
+C:/Users/Brandon/CLionProjects/figuras_object_ptr/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/Brandon/CLionProjects/figuras_object_ptr/cmake-build-debug/CMakeFiles/figuras_object_ptr.dir
+C:/Users/Brandon/CLionProjects/figuras_object_ptr/cmake-build-debug/CMakeFiles/edit_cache.dir

@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Brandon/CLionProjects/listas/lista_estatica.h
+iostream
+-
+stdexcept
+-
+
+C:/Users/Brandon/CLionProjects/listas/main.cpp
+iostream
+-
+lista_estatica.h
+C:/Users/Brandon/CLionProjects/listas/lista_estatica.h
+

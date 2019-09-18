@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Brandon/CLionProjects/temp_object/celsius.h
+
+C:/Users/Brandon/CLionProjects/temp_object/farenheit.h
+
+C:/Users/Brandon/CLionProjects/temp_object/kelvin.h
+
+C:/Users/Brandon/CLionProjects/temp_object/main.cpp
+iostream
+-
+conio.h
+-
+celsius.h
+C:/Users/Brandon/CLionProjects/temp_object/celsius.h
+farenheit.h
+C:/Users/Brandon/CLionProjects/temp_object/farenheit.h
+kelvin.h
+C:/Users/Brandon/CLionProjects/temp_object/kelvin.h
+
