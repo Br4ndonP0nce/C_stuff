@@ -6,6 +6,8 @@
 
 #IncludeRegexTransform: 
 
+C:/Users/Brandon/CLionProjects/Redes/bit_func.h
+
 C:/Users/Brandon/CLionProjects/Redes/main.cpp
 iostream
 -
@@ -13,10 +15,12 @@ fstream
 -
 string
 -
-cstdlib
--
 stdio.h
 -
-conio.h
+bit_func.h
+C:/Users/Brandon/CLionProjects/Redes/bit_func.h
+stdlib.h
+-
+stdio.h
 -
 

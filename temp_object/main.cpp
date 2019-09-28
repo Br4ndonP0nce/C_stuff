@@ -9,6 +9,9 @@ void menu();
 void menucelcius();
 void menufarenheit();
 void menukelvin();
+celsius *ptrcel;
+kelvin *ptrckel;
+farenheit *ptrfar;
 
 int main()
 {

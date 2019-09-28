@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Brandon/CLionProjects/stickman/figuritas.h
+iostream
+-
+time.h
+-
+windows.h
+-
+
+C:/Users/Brandon/CLionProjects/stickman/main.cpp
+iostream
+-
+time.h
+-
+windows.h
+-
+figuritas.h
+C:/Users/Brandon/CLionProjects/stickman/figuritas.h
+

@@ -688,3 +688,46 @@ mingw32-make.exe[1]: Leaving directory 'C:/Users/Brandon/CLionProjects/bin_decpt
     Feature record: CXX_FEATURE:0cxx_variable_templates
     Feature record: CXX_FEATURE:0cxx_variadic_macros
     Feature record: CXX_FEATURE:0cxx_variadic_templates
+The system is: Windows - 10.0.18362 - AMD64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: A:/C_compiler/bin/gcc.exe 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.exe"
+
+The C compiler identification is GNU, found in "C:/Users/Brandon/CLionProjects/bin_decptr/cmake-build-debug/CMakeFiles/3.14.5/CompilerIdC/a.exe"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: A:/C_compiler/bin/g++.exe 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.exe"
+
+The CXX compiler identification is GNU, found in "C:/Users/Brandon/CLionProjects/bin_decptr/cmake-build-debug/CMakeFiles/3.14.5/CompilerIdCXX/a.exe"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: C:/Users/Brandon/CLionProjects/bin_decptr/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):A:/C_compiler/bin/mingw32-make.exe cmTC_bdda6/fast 
+A:/C_compiler/bin/mingw32-make.exe -f CMakeFiles\cmTC_bdda6.dir\build.make CMakeFiles/cmTC_bdda6.dir/build
+mingw32-make.exe[1]: Entering directory 'C:/Users/Brandon/CLionProjects/bin_decptr/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_bdda6.dir/testCCompiler.c.obj
+A:\C_compiler\bin\gcc.exe    -o CMakeFiles\cmTC_bdda6.dir\testCCompiler.c.obj   -c C:\Users\Brandon\CLionProjects\bin_decptr\cmake-build-debug\CMakeFiles\CMakeTmp\testCCompiler.c
+Linking C executable cmTC_bdda6.exe
+"C:\Program Files\JetBrains\CLion 2018.3.3\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_bdda6.dir\link.txt --verbose=1
+"C:\Program Files\JetBrains\CLion 2018.3.3\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\cmTC_bdda6.dir/objects.a
+A:\C_compiler\bin\ar.exe cr CMakeFiles\cmTC_bdda6.dir/objects.a @CMakeFiles\cmTC_bdda6.dir\objects1.rsp
+A:\C_compiler\bin\gcc.exe      -Wl,--whole-archive CMakeFiles\cmTC_bdda6.dir/objects.a -Wl,--no-whole-archive  -o cmTC_bdda6.exe -Wl,--out-implib,libcmTC_bdda6.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_bdda6.dir\linklibs.rsp
+mingw32-make.exe[1]: Leaving directory 'C:/Users/Brandon/CLionProjects/bin_decptr/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+

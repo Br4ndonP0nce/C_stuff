@@ -82,6 +82,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/Brandon/CLionProjects/Redes/bit_func.h">
+			<Option target="Redes"/>
+		</Unit>
 		<Unit filename="C:/Users/Brandon/CLionProjects/Redes/main.cpp">
 			<Option target="Redes"/>
 		</Unit>

@@ -4,5 +4,4 @@
 CMakeFiles/testcpp.dir/main.cpp.obj: ../main.cpp
 
 CMakeFiles/testcpp.dir/year.cpp.obj: ../year.cpp
-CMakeFiles/testcpp.dir/year.cpp.obj: ../year.h
 

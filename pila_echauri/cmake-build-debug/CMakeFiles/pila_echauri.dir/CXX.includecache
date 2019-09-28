@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Brandon/CLionProjects/pila_echauri/PILA_EST.h
+iostream
+-
+stdexcept
+-
+
+C:/Users/Brandon/CLionProjects/pila_echauri/PILA_TRUE_EST.h
+PILA_EST.h
+C:/Users/Brandon/CLionProjects/pila_echauri/PILA_EST.h
+
+C:/Users/Brandon/CLionProjects/pila_echauri/main.cpp
+iostream
+-
+stdexcept
+-
+cstring
+-
+PILA_EST.h
+C:/Users/Brandon/CLionProjects/pila_echauri/PILA_EST.h
+PILA_TRUE_EST.h
+C:/Users/Brandon/CLionProjects/pila_echauri/PILA_TRUE_EST.h
+

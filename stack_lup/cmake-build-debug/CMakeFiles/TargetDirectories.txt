@@ -1,0 +1,3 @@
+C:/Users/Brandon/CLionProjects/stack_lup/cmake-build-debug/CMakeFiles/stack_lup.dir
+C:/Users/Brandon/CLionProjects/stack_lup/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Brandon/CLionProjects/stack_lup/cmake-build-debug/CMakeFiles/rebuild_cache.dir
