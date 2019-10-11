@@ -30,12 +30,6 @@ void icmpv4binchar(char c){
     }
     putchar('\n');
 }
-void binarray(char c){
-    for(int i=8;i!=0;i--){
-
-
-    }
-}
 
 
 #endif //REDES_BIT_FUNC_H

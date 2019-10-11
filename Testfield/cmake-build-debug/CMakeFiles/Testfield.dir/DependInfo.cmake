@@ -1,15 +1,17 @@
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
-  "C"
+  "CXX"
   )
 # The set of files for implicit dependencies of each language:
-set(CMAKE_DEPENDS_CHECK_C
-  "C:/Users/Brandon/CLionProjects/Testfield/main.c" "C:/Users/Brandon/CLionProjects/Testfield/cmake-build-debug/CMakeFiles/Testfield.dir/main.c.obj"
+set(CMAKE_DEPENDS_CHECK_CXX
+  "C:/Users/Brandon/CLionProjects/testfield/dato.cpp" "C:/Users/Brandon/CLionProjects/testfield/cmake-build-debug/CMakeFiles/testfield.dir/dato.cpp.obj"
+  "C:/Users/Brandon/CLionProjects/testfield/main.cpp" "C:/Users/Brandon/CLionProjects/testfield/cmake-build-debug/CMakeFiles/testfield.dir/main.cpp.obj"
+  "C:/Users/Brandon/CLionProjects/testfield/nodo.cpp" "C:/Users/Brandon/CLionProjects/testfield/cmake-build-debug/CMakeFiles/testfield.dir/nodo.cpp.obj"
   )
-set(CMAKE_C_COMPILER_ID "GNU")
+set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
-set(CMAKE_C_TARGET_INCLUDE_PATH
+set(CMAKE_CXX_TARGET_INCLUDE_PATH
   )
 
 # Targets to which this target links.

@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Brandon/CLionProjects/queue_echauri/ColaEstatica.h
+iostream
+-
+stdexcept
+-
+
+C:/Users/Brandon/CLionProjects/queue_echauri/main.cpp
+iostream
+-
+ColaEstatica.h
+C:/Users/Brandon/CLionProjects/queue_echauri/ColaEstatica.h
+

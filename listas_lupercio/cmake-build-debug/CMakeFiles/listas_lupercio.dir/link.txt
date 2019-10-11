@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2018.3.3\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\listas_lupercio.dir/objects.a
+A:\C_compiler\bin\ar.exe cr CMakeFiles\listas_lupercio.dir/objects.a @CMakeFiles\listas_lupercio.dir\objects1.rsp
+A:\C_compiler\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\listas_lupercio.dir/objects.a -Wl,--no-whole-archive  -o listas_lupercio.exe -Wl,--out-implib,liblistas_lupercio.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\listas_lupercio.dir\linklibs.rsp

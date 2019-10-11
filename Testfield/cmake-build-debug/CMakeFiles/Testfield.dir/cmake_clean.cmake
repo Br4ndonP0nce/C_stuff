@@ -1,12 +1,14 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Testfield.dir/main.c.obj"
-  "Testfield.pdb"
-  "Testfield.exe"
-  "Testfield.exe.manifest"
-  "libTestfield.dll.a"
+  "CMakeFiles/testfield.dir/main.cpp.obj"
+  "CMakeFiles/testfield.dir/dato.cpp.obj"
+  "CMakeFiles/testfield.dir/nodo.cpp.obj"
+  "testfield.pdb"
+  "testfield.exe"
+  "testfield.exe.manifest"
+  "libtestfield.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.
-foreach(lang C)
-  include(CMakeFiles/Testfield.dir/cmake_clean_${lang}.cmake OPTIONAL)
+foreach(lang CXX)
+  include(CMakeFiles/testfield.dir/cmake_clean_${lang}.cmake OPTIONAL)
 endforeach()

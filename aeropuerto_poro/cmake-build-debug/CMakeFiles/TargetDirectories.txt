@@ -1,0 +1,3 @@
+C:/Users/Brandon/CLionProjects/aeropuerto_poro/cmake-build-debug/CMakeFiles/aeropuerto_poro.dir
+C:/Users/Brandon/CLionProjects/aeropuerto_poro/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Brandon/CLionProjects/aeropuerto_poro/cmake-build-debug/CMakeFiles/rebuild_cache.dir

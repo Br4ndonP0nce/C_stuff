@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Brandon/CLionProjects/aeropuerto/Pila.h
+
+C:/Users/Brandon/CLionProjects/aeropuerto/animaciones.h
+iostream
+-
+time.h
+-
+windows.h
+-
+Pila.h
+C:/Users/Brandon/CLionProjects/aeropuerto/Pila.h
+
+C:/Users/Brandon/CLionProjects/aeropuerto/main.cpp
+iostream
+-
+Pila.h
+C:/Users/Brandon/CLionProjects/aeropuerto/Pila.h
+animaciones.h
+C:/Users/Brandon/CLionProjects/aeropuerto/animaciones.h
+

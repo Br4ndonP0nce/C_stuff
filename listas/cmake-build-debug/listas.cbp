@@ -82,9 +82,6 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/Brandon/CLionProjects/listas/lista_estatica.h">
-			<Option target="listas"/>
-		</Unit>
 		<Unit filename="C:/Users/Brandon/CLionProjects/listas/main.cpp">
 			<Option target="listas"/>
 		</Unit>

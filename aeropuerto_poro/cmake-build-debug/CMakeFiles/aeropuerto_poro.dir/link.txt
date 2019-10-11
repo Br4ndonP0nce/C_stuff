@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2018.3.3\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\aeropuerto_poro.dir/objects.a
+A:\C_compiler\bin\ar.exe cr CMakeFiles\aeropuerto_poro.dir/objects.a @CMakeFiles\aeropuerto_poro.dir\objects1.rsp
+A:\C_compiler\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\aeropuerto_poro.dir/objects.a -Wl,--no-whole-archive  -o aeropuerto_poro.exe -Wl,--out-implib,libaeropuerto_poro.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\aeropuerto_poro.dir\linklibs.rsp

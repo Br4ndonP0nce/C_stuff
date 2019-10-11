@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Brandon/CLionProjects/aeropuerto_poro/main.cpp
+iostream
+-
+conio.h
+-
+windows.h
+-
+time.h
+-
+unistd.h
+-
+cstdlib
+-
+cstring
+-
+stdio.h
+-
+stdexcept
+-
+
