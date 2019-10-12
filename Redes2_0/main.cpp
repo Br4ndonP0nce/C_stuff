@@ -2,7 +2,7 @@
 #include <fstream>
 #include <string>
 #include<stdio.h>
-#include "bit_func.h"
+#include "bin_reader.h"
 #include <stdlib.h>
 #include <stdio.h>
 const int IPV4 = 8,ARP=14,RARP=16,arr_size=50,IPV6=355;
@@ -30,6 +30,7 @@ int main() {
         cout<<"\nHemos terminado de leer los paquetes"<<endl;
         system("pause");
         cout<<"Direccion origen:"<<endl;
+
         for(int r=0;r<6;r++){
             printf("%02X:", dat[r]);//runs first 6 bytes to show origin
         }
@@ -59,7 +60,7 @@ int main() {
                 }
                 cout<<"///////////////////////////////\n";
 
-                 cout<<"\nversion :";
+                cout<<"\nversion :";
                 count =0;
                 for(int version=0;version<1;version++){
                     nonprintbincharpad(ipv4[version]);
@@ -175,7 +176,7 @@ int main() {
                     //printf("%02x",arp_rarp[y]);
                     printbincharpad(arp_rarp[y]);
                 }*///uncomment to print whole bin file after type
-                for(int hardware_t=0;hardware_t<=1;hardware_t++){
+                for(int hardware_t=0;hardware_t<1;hardware_t++){
                     printf("%02x ",arp_rarp[hardware_t]);
                     cout<<"tipo de hardware: ";
                     switch(arp_rarp[hardware_t]){
@@ -342,13 +343,14 @@ int main() {
                 for(int er_address=14;er_address<=17;er_address++){
                     printf("%d.",arp_rarp[er_address]);
                 }
+                cout<<"\n";
                 cout<<"direccion MAC receptor : ";
-                for(int h_address=18;h_address<=21;h_address++){
+                for(int h_address=18;h_address<=23;h_address++){
                     printf("%02x:",arp_rarp[h_address]);
                 }
                 cout<<"\n";
                 cout<<"direccion IP receptor: ";
-                for(int er_address=22;er_address<=25;er_address++){
+                for(int er_address=24;er_address<=27;er_address++){
                     printf("%d.",arp_rarp[er_address]);
                 }
                 break;
@@ -563,7 +565,7 @@ int main() {
                 break;
         }
         system("\npause");
-         }
+    }
     else{
         cout<<"el archivo no esta en la carpeta o no existe"<<endl;
         system("pause");
@@ -584,7 +586,7 @@ int main() {
 
                         case 8:
                             printf("\necho");
-                                break;
+                            break;
                     }
 
 

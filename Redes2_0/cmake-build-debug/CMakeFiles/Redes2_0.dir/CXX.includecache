@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Brandon/CLionProjects/Redes2_0/bin_reader.h
+
+C:/Users/Brandon/CLionProjects/Redes2_0/main.cpp
+iostream
+-
+fstream
+-
+string
+-
+stdio.h
+-
+bin_reader.h
+C:/Users/Brandon/CLionProjects/Redes2_0/bin_reader.h
+stdlib.h
+-
+stdio.h
+-
+

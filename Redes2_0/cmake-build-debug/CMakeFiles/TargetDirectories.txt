@@ -1,0 +1,3 @@
+C:/Users/Brandon/CLionProjects/Redes2_0/cmake-build-debug/CMakeFiles/Redes2_0.dir
+C:/Users/Brandon/CLionProjects/Redes2_0/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Brandon/CLionProjects/Redes2_0/cmake-build-debug/CMakeFiles/rebuild_cache.dir
