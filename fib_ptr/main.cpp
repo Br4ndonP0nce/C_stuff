@@ -11,6 +11,7 @@ int main() {
     for(num =0;num <sel;num++){
         cout<<" "<<*fibonacci(ptr2);
     }
+    system("pause");
     return 0;
 
 }

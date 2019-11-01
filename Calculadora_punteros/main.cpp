@@ -32,7 +32,7 @@ int main (){// Inicio de MAIN
 
 //Se invoca la funcion
     cout<<"La respuesta es: "<<*calculadora(ptr3,ptr1,ptr2)<<endl;
-
+    system("pause");
     return 0;
     //fin de main
 }

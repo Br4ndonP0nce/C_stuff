@@ -11,10 +11,16 @@ iostream
 -
 cstdlib
 -
-string.h
+cstring
 -
 conio.h
 -
 cstdlib
+-
+list
+-
+windows.h
+-
+regex
 -
 

@@ -5,12 +5,13 @@
 #include "bin_reader.h"
 #include <stdlib.h>
 #include <stdio.h>
-const int IPV4 = 8,ARP=14,RARP=16,arr_size=50,IPV6=355;
+#include <cmath>
+const int IPV4 = 8,ARP=14,RARP=16,arr_size=70,IPV6=355;
 
 
 using namespace std;
-int s_type=0,count=0,prototype =0,a_prot=0;
-unsigned char dat[arr_size],ipv4[arr_size],arp_rarp[arr_size],ipv6[arr_size];
+int s_type=0,count=0,prototype =0,a_prot=0, c = 0,binsum=0,n=0;
+unsigned char dat[arr_size],ipv4[arr_size],arp_rarp[arr_size],ipv6[arr_size],serv[arr_size];
 
 
 
@@ -19,12 +20,12 @@ int main() {
 
 
     unsigned char line;
-    ifstream infile("ethernet_arp_reply.bin",ios::in | ios::binary);
+    ifstream infile("ipv6_nd_router_adv.bin",ios::in | ios::binary);
     streampos beg,end;
     if(infile.is_open()) { //runs only when infile instance in ouorcase our bin file is open
         for(int i=0;i<=100;i++){
             infile >> dat[i];
-            //printf("%02X",dat[i]);    //if needed prints entire bin file content
+            printf("%02X",dat[i]);    //if needed prints entire bin file content
         }
 
         cout<<"\nHemos terminado de leer los paquetes"<<endl;
@@ -50,99 +51,99 @@ int main() {
             }
         }
         //cout<<s_type;
-        switch(s_type){
+        switch(s_type) {
             case IPV4://=8
-                cout<<": IPV4\n";
+                cout << ": IPV4\n";
 
-                for(int save=14;save<=50;save++) {
+                for (int save = 14; save <= 50; save++) {
                     ipv4[count] = dat[save];
                     count++;
                 }
-                cout<<"///////////////////////////////\n";
+                cout << "///////////////////////////////\n";
 
-                cout<<"\nversion :";
-                count =0;
-                for(int version=0;version<1;version++){
+                cout << "\nversion :";
+                count = 0;
+                for (int version = 0; version < 1; version++) {
                     nonprintbincharpad(ipv4[version]);
                     count++;
                 }
-                cout<<"4\n";
-                for(int a=0;a<4;a++){
-                    cout<<icmpv4[a];
+                cout << "4\n";
+                for (int a = 0; a < 10; a++) {
+                    cout << icmpv4[a];
                 }
-                cout<<"\n";
-                cout<<"\ntamanio:\n";
-                for(int a=4;a<10;a++){
-                    cout<<icmpv4[a];
+                cout << "\n";
+                cout << "\ntamanio:\n";
+                for (int a = 4; a < 10; a++) {
+                    cout << icmpv4[a];
                 }
-                cout<<"160 bits\n";
-                cout<<"\n\nServicio :";
-                for(int servicio=1;servicio<2;servicio++){
+                cout << "160 bits\n";
+                cout << "\n\nServicio :";
+                for (int servicio = 1; servicio < 2; servicio++) {
                     nonprintbincharpad(ipv4[servicio]);
                 }
-                for(int s=0;s<3;s++){
-                    cout<<icmpv4[s];
+                for (int s = 0; s < 3; s++) {
+                    cout << icmpv4[s];
                 }
-                cout<<"\nprioritario";
-                cout<<"\n";
-                for(int p=3;p<8;p++){
-                    cout<<icmpv4[p];
+                cout << "\nprioritario";
+                cout << "\n";
+                for (int p = 3; p < 8; p++) {
+                    cout << icmpv4[p];
                 }
-                cout<<"\nretardo:bajo\n";
-                cout<<"rendimiento: bajo\n";
-                cout<<"fiabilidad : alta\n";
-                cout<<"\n";
-                cout<<"\n";
-                count=0;
+                cout << "\nretardo:bajo\n";
+                cout << "rendimiento: bajo\n";
+                cout << "fiabilidad : alta\n";
+                cout << "\n";
+                cout << "\n";
+                count = 0;
 
-                cout<<"logitud total: \n";
-                for(int lenght=2;lenght<4;lenght++){
+                cout << "logitud total: \n";
+                for (int lenght = 2; lenght < 4; lenght++) {
                     nonprintbincharpad(ipv4[lenght]);
-                    printf("%i",ipv4[lenght]);
+                    printf("%i", ipv4[lenght]);
                 }
 
-                cout<<" bytes\n";
-                cout<<"\nidentificador: \n";
+                cout << " bytes\n";
+                cout << "\nidentificador: \n";
 
-                for(int id=4;id<=5;id++) {
+                for (int id = 4; id <= 5; id++) {
                     printbincharpad(ipv4[id]);
 
                 }
-                cout<<"\n";
-                cout<<"flags:\n";
-                for(int flag=6;flag<7;flag++){
+                cout << "\n";
+                cout << "flags:\n";
+                for (int flag = 6; flag < 7; flag++) {
                     nonprintbincharpad(ipv4[flag]);
                 }
-                for(int act_flag=0;act_flag<3;act_flag++){
-                    cout<<icmpv4[act_flag];
+                for (int act_flag = 0; act_flag < 3; act_flag++) {
+                    cout << icmpv4[act_flag];
 
-                    switch(icmpv4[act_flag]){
+                    switch (icmpv4[act_flag]) {
                         case 0:
-                            cout<<"ultimo fragmento";
+                            cout << "ultimo fragmento";
                             break;
                         case 1:
-                            cout<<"no divisible";
+                            cout << "no divisible";
                     }
                 }
-                cout<<"\n";
-                cout<<"posicion fragmento:\n";
-                for(int frag=7;frag<8;frag++){
-                    printf("%i",ipv4[frag]);
+                cout << "\n";
+                cout << "posicion fragmento:\n";
+                for (int frag = 7; frag < 8; frag++) {
+                    printf("%i", ipv4[frag]);
                 }
-                cout<<"\n";
-                for(int ttl=8;ttl<9;ttl++){
+                cout << "\n";
+                for (int ttl = 8; ttl < 9; ttl++) {
                     nonprintbincharpad(ipv4[ttl]);
-                    printf("tiempo de vida->%i",ipv4[ttl]);
+                    printf("tiempo de vida->%i", ipv4[ttl]);
                 }
-                cout<<"\n";
-                cout<<"protocolo:\n";
-                for(int prot=9;prot<10;prot++){
+                cout << "\n";
+                cout << "protocolo:\n";
+                for (int prot = 9; prot < 10; prot++) {
                     nonprintbincharpad(ipv4[prot]);
 
-                    switch(ipv4[prot]) {
+                    switch (ipv4[prot]) {
                         case 1:
                             cout << "ICMPV4";
-                            prototype=1;
+                            prototype = 1;
                             break;
                         case 2:
                             cout << "IGMP";
@@ -150,24 +151,24 @@ int main() {
                     }
 
                 }
-                cout<<"\n";
-                cout<<"direccion origen :\n";
-                for(int ori=11;ori<=14;ori++){
+                cout << "\n";
+                cout << "direccion origen :\n";
+                for (int ori = 11; ori <= 14; ori++) {
                     nonprintbincharpad(ipv4[ori]);
-                    printf("%i.",ipv4[ori]);
+                    printf("%i.", ipv4[ori]);
                 }
-                cout<<"\n";
-                cout<<"direccion destino :\n";
-                for(int dest=15;dest<=18;dest++){
+                cout << "\n";
+                cout << "direccion destino :\n";
+                for (int dest = 15; dest <= 18; dest++) {
                     nonprintbincharpad(ipv4[dest]);
-                    printf("%i.",ipv4[dest]);
+                    printf("%i.", ipv4[dest]);
                 }
-                cout<<"\n";
+                cout << "\n";
                 break;
             case ARP:
-                count =0;
-                cout<<"\nARP\n";//=14
-                for(int save=14;save<=50;save++) {
+                count = 0;
+                cout << "\nARP\n";//=14
+                for (int save = 14; save <= 50; save++) {
                     arp_rarp[count] = dat[save];
                     count++;
                 }
@@ -176,189 +177,189 @@ int main() {
                     //printf("%02x",arp_rarp[y]);
                     printbincharpad(arp_rarp[y]);
                 }*///uncomment to print whole bin file after type
-                for(int hardware_t=0;hardware_t<1;hardware_t++){
-                    printf("%02x ",arp_rarp[hardware_t]);
-                    cout<<"tipo de hardware: ";
-                    switch(arp_rarp[hardware_t]){
+                for (int hardware_t = 0; hardware_t < 1; hardware_t++) {
+                    printf("%02x ", arp_rarp[hardware_t]);
+                    cout << "tipo de hardware: ";
+                    switch (arp_rarp[hardware_t]) {
                         case 0:
-                            cout<<"Reserved";
+                            cout << "Reserved";
                             break;
                         case 1:
-                            cout<<"Ethernet";
+                            cout << "Ethernet";
                             break;
                         case 2:
-                            cout<<"Experimental Ethernet";
+                            cout << "Experimental Ethernet";
                             break;
                         case 3:
-                            cout<<"Amateur Radio";
+                            cout << "Amateur Radio";
                             break;
                         case 4:
-                            cout<<"Proteon ProNET Token Ring";
+                            cout << "Proteon ProNET Token Ring";
                             break;
                         case 5:
-                            cout<<"Chaos";
+                            cout << "Chaos";
                             break;
                         case 6:
-                            cout<<"IEEE 802";
+                            cout << "IEEE 802";
                             break;
                         case 7:
-                            cout<<"ARCNET";
+                            cout << "ARCNET";
                             break;
                         case 8:
-                            cout<<"Hyperchannel";
+                            cout << "Hyperchannel";
                             break;
                         case 9:
-                            cout<<"Lanstar";
+                            cout << "Lanstar";
                             break;
                         case 10:
-                            cout<<"Autonet Short Address ";
+                            cout << "Autonet Short Address ";
                             break;
                         case 11:
-                            cout<<"LocalTalk";
+                            cout << "LocalTalk";
                             break;
                         case 12:
-                            cout<<"LocalNet";
+                            cout << "LocalNet";
                             break;
                         case 13:
-                            cout<<"UltraLink";
+                            cout << "UltraLink";
                             break;
                         case 14:
-                            cout<<"SMDS";
+                            cout << "SMDS";
                             break;
                         case 15:
-                            cout<<"Frame Relay";
+                            cout << "Frame Relay";
                             break;
                         case 16:
-                            cout<<"Asynchronous Transmision Mode";
+                            cout << "Asynchronous Transmision Mode";
                             break;
                         case 17:
-                            cout<<"HDLC";
+                            cout << "HDLC";
                             break;
                         case 18:
-                            cout<<"Fibre Channel";
+                            cout << "Fibre Channel";
                             break;
                         case 19:
-                            cout<<"Asynchronous Transmission Mode";
+                            cout << "Asynchronous Transmission Mode";
                             break;
                         case 20:
-                            cout<<"Serial Line";
+                            cout << "Serial Line";
                             break;
                         case 21:
-                            cout<<"Asynchronous Transmission Mode";
+                            cout << "Asynchronous Transmission Mode";
                             break;
                         case 22:
-                            cout<<"MIL-STD-188-220";
+                            cout << "MIL-STD-188-220";
                             break;
                         case 23:
-                            cout<<"Metricon";
+                            cout << "Metricon";
                             break;
                         case 24:
-                            cout<<"IEE 1394.1995";
+                            cout << "IEE 1394.1995";
                             break;
                         case 25:
-                            cout<<"MAPOS";
+                            cout << "MAPOS";
                             break;
                         case 26:
-                            cout<<"TwinAxial";
+                            cout << "TwinAxial";
                             break;
                         case 27:
-                            cout<<"EUI-64";
+                            cout << "EUI-64";
                             break;
                         case 28:
-                            cout<<"HIPARP";
+                            cout << "HIPARP";
                             break;
                         case 29:
-                            cout<<"IP and ARP";
+                            cout << "IP and ARP";
                             break;
                         case 30:
-                            cout<<"ARPsec";
+                            cout << "ARPsec";
                             break;
                         case 31:
-                            cout<<"IPsec Tunnel";
+                            cout << "IPsec Tunnel";
                             break;
                     }
-                    cout<<"\n";
+                    cout << "\n";
                 }
-                for(int prot_type=2;prot_type<=3;prot_type++) {
-                    a_prot+=arp_rarp[prot_type];
+                for (int prot_type = 2; prot_type <= 3; prot_type++) {
+                    a_prot += arp_rarp[prot_type];
                 }
-                cout<<"Tipo de Protocolo:\n";
-                switch (a_prot){
+                cout << "Tipo de Protocolo:\n";
+                switch (a_prot) {
                     case 8:
-                        cout<<" IPv4";
+                        cout << " IPv4";
                         break;
                     case 14:
-                        cout<<" ARP";
+                        cout << " ARP";
                         break;
                     case 16:
-                        cout<<" RARP";
+                        cout << " RARP";
                         break;
                     case 34525:
-                        cout<<" IPv6";
+                        cout << " IPv6";
                         break;
                     default:
-                        cout<<"not recognizable";
+                        cout << "not recognizable";
 
                 }
-                cout<<"\n";
-                cout<<"Longitud de direccion hardware";
-                for(int l_hardware=4;l_hardware<=4;l_hardware++){
+                cout << "\n";
+                cout << "Longitud de direccion hardware";
+                for (int l_hardware = 4; l_hardware <= 4; l_hardware++) {
                     //icmpv4binchar(arp_rarp[l_hardware]); //prints binary value for address
-                    printf("\n%d",arp_rarp[l_hardware]);
+                    printf("\n%d", arp_rarp[l_hardware]);
                 }
-                cout<<" bytes";
-                cout<<"\n";
-                cout<<"Longitud de direccion de protocolo";
-                for(int l_hardware=5;l_hardware<=5;l_hardware++){
+                cout << " bytes";
+                cout << "\n";
+                cout << "Longitud de direccion de protocolo";
+                for (int l_hardware = 5; l_hardware <= 5; l_hardware++) {
                     //icmpv4binchar(arp_rarp[l_hardware]); //prints binary value for address
-                    printf(" \n%d",arp_rarp[l_hardware]);
+                    printf(" \n%d", arp_rarp[l_hardware]);
                 }
-                cout<<" bytes";
-                cout<<"\n";
-                for(int op_code=6;op_code<=7;op_code++){
+                cout << " bytes";
+                cout << "\n";
+                for (int op_code = 6; op_code <= 7; op_code++) {
                     //icmpv4binchar(arp_rarp[op_code]);
-                    printf(" \n%d",arp_rarp[op_code]);
-                    switch(arp_rarp[op_code]){
+                    printf(" \n%d", arp_rarp[op_code]);
+                    switch (arp_rarp[op_code]) {
                         case 1:
-                            cout<<" Solicititud ARP";
+                            cout << " Solicititud ARP";
                             break;
                         case 2:
-                            cout<<" Respuesta ARP";
+                            cout << " Respuesta ARP";
                             break;
                         case 3:
-                            cout<<" Solicitud RARP";
+                            cout << " Solicitud RARP";
                             break;
                         case 4:
-                            cout<< "Respuesta RARP";
+                            cout << "Respuesta RARP";
                             break;
                     }
-                    cout<<"\n";
+                    cout << "\n";
                 }
-                cout<<"direccion MAC emisor : ";
-                for(int h_address=8;h_address<=13;h_address++){
-                    printf("%02x:",arp_rarp[h_address]);
+                cout << "direccion MAC emisor : ";
+                for (int h_address = 8; h_address <= 13; h_address++) {
+                    printf("%02x:", arp_rarp[h_address]);
                 }
-                cout<<"\n";
-                cout<<"direccion IP emisor: ";
-                for(int er_address=14;er_address<=17;er_address++){
-                    printf("%d.",arp_rarp[er_address]);
+                cout << "\n";
+                cout << "direccion IP emisor: ";
+                for (int er_address = 14; er_address <= 17; er_address++) {
+                    printf("%d.", arp_rarp[er_address]);
                 }
-                cout<<"\n";
-                cout<<"direccion MAC receptor : ";
-                for(int h_address=18;h_address<=23;h_address++){
-                    printf("%02x:",arp_rarp[h_address]);
+                cout << "\n";
+                cout << "direccion MAC receptor : ";
+                for (int h_address = 18; h_address <= 23; h_address++) {
+                    printf("%02x:", arp_rarp[h_address]);
                 }
-                cout<<"\n";
-                cout<<"direccion IP receptor: ";
-                for(int er_address=24;er_address<=27;er_address++){
-                    printf("%d.",arp_rarp[er_address]);
+                cout << "\n";
+                cout << "direccion IP receptor: ";
+                for (int er_address = 24; er_address <= 27; er_address++) {
+                    printf("%d.", arp_rarp[er_address]);
                 }
                 break;
             case RARP:
-                cout<<"RARP\n";//=16
-                count =0;
-                cout<<"\nARP\n";//=14
-                for(int save=14;save<=50;save++) {
+                cout << "RARP\n";//=16
+                count = 0;
+                cout << "\nARP\n";//=14
+                for (int save = 14; save <= 50; save++) {
                     arp_rarp[count] = dat[save];
                     count++;
                 }
@@ -367,198 +368,253 @@ int main() {
                     //printf("%02x",arp_rarp[y]);
                     printbincharpad(arp_rarp[y]);
                 }*///uncomment to print whole bin file after type
-                for(int hardware_t=0;hardware_t<=1;hardware_t++){
-                    printf("%02x ",arp_rarp[hardware_t]);
-                    switch(arp_rarp[hardware_t]){
+                for (int hardware_t = 0; hardware_t <= 1; hardware_t++) {
+                    printf("%02x ", arp_rarp[hardware_t]);
+                    switch (arp_rarp[hardware_t]) {
                         case 0:
-                            cout<<"Reserved";
+                            cout << "Reserved";
                             break;
                         case 1:
-                            cout<<"Ethernet";
+                            cout << "Ethernet";
                             break;
                         case 2:
-                            cout<<"Experimental Ethernet";
+                            cout << "Experimental Ethernet";
                             break;
                         case 3:
-                            cout<<"Amateur Radio";
+                            cout << "Amateur Radio";
                             break;
                         case 4:
-                            cout<<"Proteon ProNET Token Ring";
+                            cout << "Proteon ProNET Token Ring";
                             break;
                         case 5:
-                            cout<<"Chaos";
+                            cout << "Chaos";
                             break;
                         case 6:
-                            cout<<"IEEE 802";
+                            cout << "IEEE 802";
                             break;
                         case 7:
-                            cout<<"ARCNET";
+                            cout << "ARCNET";
                             break;
                         case 8:
-                            cout<<"Hyperchannel";
+                            cout << "Hyperchannel";
                             break;
                         case 9:
-                            cout<<"Lanstar";
+                            cout << "Lanstar";
                             break;
                         case 10:
-                            cout<<"Autonet Short Address ";
+                            cout << "Autonet Short Address ";
                             break;
                         case 11:
-                            cout<<"LocalTalk";
+                            cout << "LocalTalk";
                             break;
                         case 12:
-                            cout<<"LocalNet";
+                            cout << "LocalNet";
                             break;
                         case 13:
-                            cout<<"UltraLink";
+                            cout << "UltraLink";
                             break;
                         case 14:
-                            cout<<"SMDS";
+                            cout << "SMDS";
                             break;
                         case 15:
-                            cout<<"Frame Relay";
+                            cout << "Frame Relay";
                             break;
                         case 16:
-                            cout<<"Asynchronous Transmision Mode";
+                            cout << "Asynchronous Transmision Mode";
                             break;
                         case 17:
-                            cout<<"HDLC";
+                            cout << "HDLC";
                             break;
                         case 18:
-                            cout<<"Fibre Channel";
+                            cout << "Fibre Channel";
                             break;
                         case 19:
-                            cout<<"Asynchronous Transmission Mode";
+                            cout << "Asynchronous Transmission Mode";
                             break;
                         case 20:
-                            cout<<"Serial Line";
+                            cout << "Serial Line";
                             break;
                         case 21:
-                            cout<<"Asynchronous Transmission Mode";
+                            cout << "Asynchronous Transmission Mode";
                             break;
                         case 22:
-                            cout<<"MIL-STD-188-220";
+                            cout << "MIL-STD-188-220";
                             break;
                         case 23:
-                            cout<<"Metricon";
+                            cout << "Metricon";
                             break;
                         case 24:
-                            cout<<"IEE 1394.1995";
+                            cout << "IEE 1394.1995";
                             break;
                         case 25:
-                            cout<<"MAPOS";
+                            cout << "MAPOS";
                             break;
                         case 26:
-                            cout<<"TwinAxial";
+                            cout << "TwinAxial";
                             break;
                         case 27:
-                            cout<<"EUI-64";
+                            cout << "EUI-64";
                             break;
                         case 28:
-                            cout<<"HIPARP";
+                            cout << "HIPARP";
                             break;
                         case 29:
-                            cout<<"IP and ARP";
+                            cout << "IP and ARP";
                             break;
                         case 30:
-                            cout<<"ARPsec";
+                            cout << "ARPsec";
                             break;
                         case 31:
-                            cout<<"IPsec Tunnel";
+                            cout << "IPsec Tunnel";
                             break;
                     }
-                    cout<<"\n";
+                    cout << "\n";
                 }
-                for(int prot_type=2;prot_type<=3;prot_type++) {
-                    a_prot+=arp_rarp[prot_type];
+                for (int prot_type = 2; prot_type <= 3; prot_type++) {
+                    a_prot += arp_rarp[prot_type];
                 }
-                cout<<"Tipo de Protocolo:\n";
-                switch (a_prot){
+                cout << "Tipo de Protocolo:\n";
+                switch (a_prot) {
                     case 8:
-                        cout<<" IPv4";
+                        cout << " IPv4";
                         break;
                     case 14:
-                        cout<<" ARP";
+                        cout << " ARP";
                         break;
                     case 16:
-                        cout<<" RARP";
+                        cout << " RARP";
                         break;
                     case 34525:
-                        cout<<" IPv6";
+                        cout << " IPv6";
                         break;
                     default:
-                        cout<<"not recognizable";
+                        cout << "not recognizable";
 
                 }
-                cout<<"\n";
-                cout<<"Longitud del hardware";
-                for(int l_hardware=4;l_hardware<=4;l_hardware++){
+                cout << "\n";
+                cout << "Longitud del hardware";
+                for (int l_hardware = 4; l_hardware <= 4; l_hardware++) {
                     //icmpv4binchar(arp_rarp[l_hardware]);
-                    printf("\n%d",arp_rarp[l_hardware]);
+                    printf("\n%d", arp_rarp[l_hardware]);
                 }
-                cout<<" bytes";
-                cout<<"\n";
-                cout<<"Longitud del protocolo";
-                for(int l_hardware=5;l_hardware<=5;l_hardware++){
+                cout << " bytes";
+                cout << "\n";
+                cout << "Longitud del protocolo";
+                for (int l_hardware = 5; l_hardware <= 5; l_hardware++) {
                     //icmpv4binchar(arp_rarp[l_hardware]);
-                    printf(" \n%d",arp_rarp[l_hardware]);
+                    printf(" \n%d", arp_rarp[l_hardware]);
                 }
-                cout<<" bytes";
-                cout<<"\n";
-                for(int op_code=6;op_code<=7;op_code++){
+                cout << " bytes";
+                cout << "\n";
+                for (int op_code = 6; op_code <= 7; op_code++) {
                     //icmpv4binchar(arp_rarp[op_code]);
-                    printf(" \n%d",arp_rarp[op_code]);
-                    switch(arp_rarp[op_code]){
+                    printf(" \n%d", arp_rarp[op_code]);
+                    switch (arp_rarp[op_code]) {
                         case 1:
-                            cout<<" Solicititud ARP";
+                            cout << " Solicititud ARP";
                             break;
                         case 2:
-                            cout<<" Respuesta ARP";
+                            cout << " Respuesta ARP";
                             break;
                         case 3:
-                            cout<<" Solicitud RARP";
+                            cout << " Solicitud RARP";
                             break;
                         case 4:
-                            cout<< "Respuesta RARP";
+                            cout << "Respuesta RARP";
                             break;
                     }
-                    cout<<"\n";
+                    cout << "\n";
                 }
-                cout<<"direccion MAC emisor : ";
-                for(int h_address=8;h_address<=13;h_address++){
-                    printf("%02x:",arp_rarp[h_address]);
+                cout << "direccion MAC emisor : ";
+                for (int h_address = 8; h_address <= 13; h_address++) {
+                    printf("%02x:", arp_rarp[h_address]);
                 }
-                cout<<"\n";
-                cout<<"direccion IP emisor: ";
-                for(int er_address=14;er_address<=17;er_address++){
-                    printf("%d.",arp_rarp[er_address]);
+                cout << "\n";
+                cout << "direccion IP emisor: ";
+                for (int er_address = 14; er_address <= 17; er_address++) {
+                    printf("%d.", arp_rarp[er_address]);
                 }
-                cout<<"direccion MAC receptor : ";
-                for(int h_address=18;h_address<=21;h_address++){
-                    printf("%02x:",arp_rarp[h_address]);
+                cout << "direccion MAC receptor : ";
+                for (int h_address = 18; h_address <= 21; h_address++) {
+                    printf("%02x:", arp_rarp[h_address]);
                 }
-                cout<<"\n";
-                cout<<"direccion IP receptor: ";
-                for(int er_address=22;er_address<=25;er_address++){
-                    printf("%d.",arp_rarp[er_address]);
+                cout << "\n";
+                cout << "direccion IP receptor: ";
+                for (int er_address = 22; er_address <= 25; er_address++) {
+                    printf("%d.", arp_rarp[er_address]);
                 }
 
                 break;
 
             case IPV6:
-                count=0;
-                cout<<"IPV6\n"<<endl;//=had to use a checksum that gives as th result 355
-                for(int save=14;save<=50;save++){
+                count = 0;
+                cout << "IPV6\n" << endl;//=had to use a checksum that gives as th result 355
+                for (int save = 14; save <= 50; save++) {
+                    icmpv4[count] = dat[save];
                     ipv6[count]=dat[save];
                     count++;
                 }
-                for(int version=0;version<1;version++){
-                    nonprintbincharpad(ipv6[version]);
+                for (int i = 0; i < arr_size; i++) {
+                    printf("%02x", icmpv4[i]);
                 }
-                for(int a=0;a<4;a++){
-                    cout<<icmpv4[a];
+                cout << "\n";
+                for (int i = 0; i < 80; i++) {
+                    nonprintbincharpad(icmpv4[i]);
                 }
-                cout<<"6";
+
+                cout << " \nIP version: ";
+
+                for (int ver_bin = 0; ver_bin < 4; ver_bin++) {
+                    cout << icmpv4[ver_bin];
+                }
+                cout << "\n6\n";
+                cout << "Clase de trafico: 3\n";
+
+                for (int t_class = 4; t_class < 12; t_class++) {
+                    cout << icmpv4[t_class];
+                    serv[c] = icmpv4[t_class];
+                    c++;
+                }
+                cout<<"\nServicio: Rutina\n";
+                cout<<"Prioridad\n";
+                cout<<"Retardo: normal\n";
+                cout<<"Rendimiento:alto\n";
+                cout<<"Fiabilidad: alta\n";
+
+                cout << "\ntipo de flujo: \n";
+                for (int t_flux = 12; t_flux < 32; t_flux++) {
+                    cout << icmpv4[t_flux];
+                }
+                cout<<"78128";
+                cout << "\nPayload/Tamanio de los datos: \n";
+                for (int payload = 48; payload >= 32; --payload) {
+                    if(icmpv4[payload]==1){
+                        binsum+=pow(2,n);
+                    }
+                    cout << icmpv4[payload];
+                    n++;
+                }
+                cout<<binsum;
+                cout << "\n6168 bytes\nnext header:\n";
+                for (int n_header = 48; n_header < 56; n_header++) {
+                    cout << icmpv4[n_header];
+                }
+                cout<<"\n48: MHRP (Mobile Host Routing Protocol)\n";
+                for(int hop=56;hop<64;hop++){
+                    //cout<<icmpv4[hop];
+                }
+                cout<<"tiempo de vida (hops): 48\n";
+                cout<<"Direccion origen:";
+                for(int origin = 20;origin<29;origin++){
+                    printf("%02x:",ipv6[origin]);
+                }
+                cout<<"\n";
+                cout<<"Direccion destino:";
+                for(int destination =30;destination<39;destination++){
+                    printf("%02x:",ipv6[destination]);
+                }
+                cout<<"\n";
+
                 break;
             default:
                 cout<<"Non recognizable type"<<endl;

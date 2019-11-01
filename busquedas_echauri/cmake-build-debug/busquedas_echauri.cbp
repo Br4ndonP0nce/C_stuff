@@ -82,7 +82,13 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/Brandon/CLionProjects/busquedas_echauri/lista_estatica.h">
+			<Option target="busquedas_echauri"/>
+		</Unit>
 		<Unit filename="C:/Users/Brandon/CLionProjects/busquedas_echauri/main.cpp">
+			<Option target="busquedas_echauri"/>
+		</Unit>
+		<Unit filename="C:/Users/Brandon/CLionProjects/busquedas_echauri/searcher.h">
 			<Option target="busquedas_echauri"/>
 		</Unit>
 		<Unit filename="C:/Users/Brandon/CLionProjects/busquedas_echauri/CMakeLists.txt">

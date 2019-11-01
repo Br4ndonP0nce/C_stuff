@@ -1,8 +1,8 @@
 #ifndef REDES2_0_BIN_READER_H
 #define REDES2_0_BIN_READER_H
-unsigned char icmpv4[50],translate[50];
+unsigned char icmpv4[50],translate[50],ipv6_bin[1000];
 char *ptr=NULL;
-int count_ = 0,trans_b=0;
+int count_ = 0,trans_b=0,ip6=0;
 void printbincharpad(char c){
     for (int i = 7; i >= 0; --i)
     {
@@ -30,5 +30,13 @@ void icmpv4binchar(char c){
     }
     putchar('\n');
 }
+void bin_bin(char c){
+    for (int i = 7; i >= 0; --i)
+    {
+        ipv6_bin[ip6]=(c & (1 << i)) ? '1' : '0';
+        ip6++;
 
+    }
+    putchar('\n');
+}
 #endif //REDES2_0_BIN_READER_H

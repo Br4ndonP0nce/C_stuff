@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Brandon/CLionProjects/busquedas_echauri/lista_estatica.h
+iostream
+-
+stdexcept
+-
+
+C:/Users/Brandon/CLionProjects/busquedas_echauri/main.cpp
+iostream
+-
+searcher.h
+C:/Users/Brandon/CLionProjects/busquedas_echauri/searcher.h
+functional
+C:/Users/Brandon/CLionProjects/busquedas_echauri/functional
+lista_estatica.h
+C:/Users/Brandon/CLionProjects/busquedas_echauri/lista_estatica.h
+
+C:/Users/Brandon/CLionProjects/busquedas_echauri/searcher.h
+lista_estatica.h
+C:/Users/Brandon/CLionProjects/busquedas_echauri/lista_estatica.h
+
