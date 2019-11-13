@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Brandon/CLionProjects/LSLechauri/lsl.h
+iostream
+-
+stdexcept
+-
+
+C:/Users/Brandon/CLionProjects/LSLechauri/main.cpp
+iostream
+-
+lsl.h
+C:/Users/Brandon/CLionProjects/LSLechauri/lsl.h
+iostream
+-
+

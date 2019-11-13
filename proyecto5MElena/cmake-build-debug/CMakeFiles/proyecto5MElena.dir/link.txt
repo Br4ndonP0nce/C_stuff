@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2018.3.3\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\proyecto5MElena.dir/objects.a
+A:\C_compiler\bin\ar.exe cr CMakeFiles\proyecto5MElena.dir/objects.a @CMakeFiles\proyecto5MElena.dir\objects1.rsp
+A:\C_compiler\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\proyecto5MElena.dir/objects.a -Wl,--no-whole-archive  -o proyecto5MElena.exe -Wl,--out-implib,libproyecto5MElena.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\proyecto5MElena.dir\linklibs.rsp

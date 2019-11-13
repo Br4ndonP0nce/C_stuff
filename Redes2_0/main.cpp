@@ -5,12 +5,13 @@
 #include "bin_reader.h"
 #include <stdlib.h>
 #include <stdio.h>
-#include <cmath>
+#include <cmath>5
+#include <>
 const int IPV4 = 8,ARP=14,RARP=16,arr_size=70,IPV6=355;
 
 
 using namespace std;
-int s_type=0,count=0,prototype =0,a_prot=0, c = 0,binsum=0,n=0;
+int s_type=0,count=0,prototype =0,a_prot=0, c = 0,binsum=0,n=0,icmpv6prot;
 unsigned char dat[arr_size],ipv4[arr_size],arp_rarp[arr_size],ipv6[arr_size],serv[arr_size];
 
 
@@ -25,7 +26,7 @@ int main() {
     if(infile.is_open()) { //runs only when infile instance in ouorcase our bin file is open
         for(int i=0;i<=100;i++){
             infile >> dat[i];
-            printf("%02X",dat[i]);    //if needed prints entire bin file content
+            //printf("%02X",dat[i]);    //if needed prints entire bin file content
         }
 
         cout<<"\nHemos terminado de leer los paquetes"<<endl;
@@ -549,13 +550,13 @@ int main() {
             case IPV6:
                 count = 0;
                 cout << "IPV6\n" << endl;//=had to use a checksum that gives as th result 355
-                for (int save = 14; save <= 50; save++) {
+                for (int save = 14; save <= arr_size; save++) {
                     icmpv4[count] = dat[save];
                     ipv6[count]=dat[save];
                     count++;
                 }
                 for (int i = 0; i < arr_size; i++) {
-                    printf("%02x", icmpv4[i]);
+                    //printf("%02x", icmpv4[i]);
                 }
                 cout << "\n";
                 for (int i = 0; i < 80; i++) {
@@ -585,7 +586,7 @@ int main() {
                 for (int t_flux = 12; t_flux < 32; t_flux++) {
                     cout << icmpv4[t_flux];
                 }
-                cout<<"78128";
+                cout<<"\n78128";
                 cout << "\nPayload/Tamanio de los datos: \n";
                 for (int payload = 48; payload >= 32; --payload) {
                     if(icmpv4[payload]==1){
@@ -596,21 +597,25 @@ int main() {
                 }
                 cout<<binsum;
                 cout << "\n6168 bytes\nnext header:\n";
-                for (int n_header = 48; n_header < 56; n_header++) {
-                    cout << icmpv4[n_header];
+                    printf("%i\n",ipv6[6]);
+                switch(ipv6[6]){
+                    case 58:
+                        cout<<"icmpv6\n";
+                        icmpv6prot=1;
+
+                        break;
                 }
-                cout<<"\n48: MHRP (Mobile Host Routing Protocol)\n";
                 for(int hop=56;hop<64;hop++){
                     //cout<<icmpv4[hop];
                 }
                 cout<<"tiempo de vida (hops): 48\n";
                 cout<<"Direccion origen:";
-                for(int origin = 20;origin<29;origin++){
+                for(int origin = 10;origin<16;origin++){
                     printf("%02x:",ipv6[origin]);
                 }
                 cout<<"\n";
                 cout<<"Direccion destino:";
-                for(int destination =30;destination<39;destination++){
+                for(int destination =16;destination<22;destination++){
                     printf("%02x:",ipv6[destination]);
                 }
                 cout<<"\n";
@@ -659,9 +664,98 @@ int main() {
             }
             cout<<"\n";
         }
-        cout<<"checksum:";
+        cout<<"checksum:\n";
         printf("%d",ipv4[22]+ipv4[23]);
         cout<<"\n";
+        system("pause");
+
+    }
+    if(icmpv6prot==1){
+        cout<<"ICMPV6";
+        cout<<"\ntype\n";
+        for(int t=25;t<26;t++){
+            printf("%i",ipv6[t]);
+        }
+        switch(ipv6[25]){
+            case 1:
+                printf("\n%i",ipv6[26]);
+                switch(ipv6[26]){
+                    case 0:
+                        cout<<"no existe ruta destino";
+                        break;
+                    case 1:
+                        cout<<"comunicacion con el destino administrativamente porhibida";
+                        break;
+                    case 2:
+                        cout<<"no asignado";
+                        break;
+                    case 3:
+                        cout<<"direccion inalcanzable";
+                        break;
+                    default:
+                        cout<<"non readable";
+                }
+
+                
+                break;
+            case 2:
+                printf("\n%i\n",ipv6[26]);
+                switch(ipv6[26]){
+                    case 0:
+                        cout<<"mensaje de paquete demasiado grande";
+                        break;
+                    case 1:
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+                        break;
+                    default:
+                        cout<<"non readable";
+                }
+                break;
+            case 3:
+                printf("\n%i\n",ipv6[26]);
+                switch(ipv6[26]){
+                    case 0:
+                        cout<<"limite de salto excedido";
+                        break;
+                    case 1:
+                        cout<<"tiempo de reemsamble de fragmento excedido";
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+                        break;
+                    default:
+                        cout<<"non readable";
+                }
+
+                break;
+            case 4:
+                printf("\n%i\n",ipv6[26]);
+                switch(ipv6[26]){
+                    case 0:
+                        cout<<"campo de encabezado erroneo";
+                        break;
+                    case 1:
+                        cout<<"tipo siguiente desconocido";
+                        break;
+                    case 2:
+                        cout<<"opcion ipv6 desconocida";
+                        break;
+                    case 3:
+                        break;
+                    default:
+                        cout<<"non readable";
+                }
+
+                break;
+        }
+        cout<<"\nchecksum\n";
+        for(int checksum=27;checksum<28;checksum++){
+            printf("%i",ipv6[27]+ipv6[28]);
+        }
         system("pause");
 
     }
