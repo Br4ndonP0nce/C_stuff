@@ -6,9 +6,39 @@
 
 #IncludeRegexTransform: 
 
+C:/Users/Brandon/CLionProjects/testfield/ldl.h
+iostream
+-
+stdlib.h
+-
+stdio.h
+-
+locale.h
+-
+conio.h
+-
+string.h
+-
+
 C:/Users/Brandon/CLionProjects/testfield/main.cpp
 iostream
 -
-string
+cstdio
+-
+cstdlib
+-
+cstring
+-
+clocale
+-
+conio.h
+C:/Users/Brandon/CLionProjects/testfield/conio.h
+stdlib.h
+C:/Users/Brandon/CLionProjects/testfield/stdlib.h
+ldl.h
+C:/Users/Brandon/CLionProjects/testfield/ldl.h
+regex
+C:/Users/Brandon/CLionProjects/testfield/regex
+fstream
 -
 

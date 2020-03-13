@@ -6,6 +6,16 @@
 
 #IncludeRegexTransform: 
 
+C:/Users/Brandon/CLionProjects/LSLechauri/Elementos.h
+string
+-
+iostream
+-
+
+C:/Users/Brandon/CLionProjects/LSLechauri/TablaPeriodica.h
+Elementos.h
+C:/Users/Brandon/CLionProjects/LSLechauri/Elementos.h
+
 C:/Users/Brandon/CLionProjects/LSLechauri/lsl.h
 iostream
 -
@@ -17,6 +27,10 @@ iostream
 -
 lsl.h
 C:/Users/Brandon/CLionProjects/LSLechauri/lsl.h
+TablaPeriodica.h
+C:/Users/Brandon/CLionProjects/LSLechauri/TablaPeriodica.h
+Elementos.h
+C:/Users/Brandon/CLionProjects/LSLechauri/Elementos.h
 iostream
 -
 

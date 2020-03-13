@@ -82,6 +82,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/Brandon/CLionProjects/testcpp/bin_reader.h">
+			<Option target="testcpp"/>
+		</Unit>
 		<Unit filename="C:/Users/Brandon/CLionProjects/testcpp/main.cpp">
 			<Option target="testcpp"/>
 		</Unit>

@@ -10,6 +10,7 @@ int main() {
     lista.push_front(10);
     lista.push_front(2);
     lista.push_front(23);
+    lista.erase(0);
 
     cout<<"vacia:"<<lista.empty()<<endl;
     cout<<"size:"<<lista.size()<<endl;

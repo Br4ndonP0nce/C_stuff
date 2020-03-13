@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Brandon/CLionProjects/Tarea_echauri/Elemento.cpp
+Elemento.h
+C:/Users/Brandon/CLionProjects/Tarea_echauri/Elemento.h
+
+C:/Users/Brandon/CLionProjects/Tarea_echauri/Elemento.h
+iostream
+-
+string
+-
+
+C:/Users/Brandon/CLionProjects/Tarea_echauri/Periodic_table.cpp
+Periodic_table.h
+C:/Users/Brandon/CLionProjects/Tarea_echauri/Periodic_table.h
+
+C:/Users/Brandon/CLionProjects/Tarea_echauri/Periodic_table.h
+lsl.h
+C:/Users/Brandon/CLionProjects/Tarea_echauri/lsl.h
+Elemento.h
+C:/Users/Brandon/CLionProjects/Tarea_echauri/Elemento.h
+
+C:/Users/Brandon/CLionProjects/Tarea_echauri/lsl.h
+iostream
+-
+stdexcept
+-
+
+C:/Users/Brandon/CLionProjects/Tarea_echauri/main.cpp
+iostream
+-
+Periodic_table.h
+C:/Users/Brandon/CLionProjects/Tarea_echauri/Periodic_table.h
+lsl.h
+C:/Users/Brandon/CLionProjects/Tarea_echauri/lsl.h
+Elemento.h
+C:/Users/Brandon/CLionProjects/Tarea_echauri/Elemento.h
+

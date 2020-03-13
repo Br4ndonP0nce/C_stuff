@@ -5,30 +5,22 @@
 #include "bin_reader.h"
 #include <stdlib.h>
 #include <stdio.h>
-#include <cmath>5
-#include <>
+#include <cmath>
 const int IPV4 = 8,ARP=14,RARP=16,arr_size=70,IPV6=355;
-
-
 using namespace std;
-int s_type=0,count=0,prototype =0,a_prot=0, c = 0,binsum=0,n=0,icmpv6prot;
+int s_type=0,count=0,prototype =0,a_prot=0,count1=0, c = 0,binsum=0,n=0,icmpv6prot,udpflag=0,tcpflag=0;
 unsigned char dat[arr_size],ipv4[arr_size],arp_rarp[arr_size],ipv6[arr_size],serv[arr_size];
-
-
-
-
 int main() {
 
 
     unsigned char line;
-    ifstream infile("ipv6_nd_router_adv.bin",ios::in | ios::binary);
+    ifstream infile("ethernet_ipv6_nd.bin",ios::in|ios::binary);
     streampos beg,end;
     if(infile.is_open()) { //runs only when infile instance in ouorcase our bin file is open
         for(int i=0;i<=100;i++){
             infile >> dat[i];
             //printf("%02X",dat[i]);    //if needed prints entire bin file content
         }
-
         cout<<"\nHemos terminado de leer los paquetes"<<endl;
         system("pause");
         cout<<"Direccion origen:"<<endl;
@@ -55,18 +47,17 @@ int main() {
         switch(s_type) {
             case IPV4://=8
                 cout << ": IPV4\n";
-
                 for (int save = 14; save <= 50; save++) {
-                    ipv4[count] = dat[save];
-                    count++;
+                    ipv4[count1] = dat[save];
+                    count1++;
                 }
                 cout << "///////////////////////////////\n";
 
                 cout << "\nversion :";
-                count = 0;
+                count1 = 0;
                 for (int version = 0; version < 1; version++) {
                     nonprintbincharpad(ipv4[version]);
-                    count++;
+                    count1++;
                 }
                 cout << "4\n";
                 for (int a = 0; a < 10; a++) {
@@ -95,9 +86,9 @@ int main() {
                 cout << "fiabilidad : alta\n";
                 cout << "\n";
                 cout << "\n";
-                count = 0;
+                count1 = 0;
 
-                cout << "logitud total: \n";
+                cout << "longitud total: \n";
                 for (int lenght = 2; lenght < 4; lenght++) {
                     nonprintbincharpad(ipv4[lenght]);
                     printf("%i", ipv4[lenght]);
@@ -117,7 +108,6 @@ int main() {
                 }
                 for (int act_flag = 0; act_flag < 3; act_flag++) {
                     cout << icmpv4[act_flag];
-
                     switch (icmpv4[act_flag]) {
                         case 0:
                             cout << "ultimo fragmento";
@@ -140,7 +130,6 @@ int main() {
                 cout << "protocolo:\n";
                 for (int prot = 9; prot < 10; prot++) {
                     nonprintbincharpad(ipv4[prot]);
-
                     switch (ipv4[prot]) {
                         case 1:
                             cout << "ICMPV4";
@@ -149,8 +138,28 @@ int main() {
                         case 2:
                             cout << "IGMP";
                             break;
-                    }
+                        case 3:
+                            cout<<"GGP";
+                            break;
+                        case 4:
+                            cout<<"IPV4";
+                            break;
+                        case 5:
+                            cout<<"ST";
+                            break;
+                        case 6:
+                            cout<<"TCP";
+                            tcpflag=1;
+                            break;
+                        case 17:
+                            cout<<"UDP";
+                            udpflag=1;
 
+                            break;
+                        default:
+                            cout<<"non recognizable protocol";
+                            break;
+                    }
                 }
                 cout << "\n";
                 cout << "direccion origen :\n";
@@ -167,11 +176,11 @@ int main() {
                 cout << "\n";
                 break;
             case ARP:
-                count = 0;
+                count1 = 0;
                 cout << "\nARP\n";//=14
                 for (int save = 14; save <= 50; save++) {
-                    arp_rarp[count] = dat[save];
-                    count++;
+                    arp_rarp[count1] = dat[save];
+                    count1++;
                 }
                 /*
                 for(int y=0;y<arr_size;y++){
@@ -358,11 +367,11 @@ int main() {
                 break;
             case RARP:
                 cout << "RARP\n";//=16
-                count = 0;
+                count1 = 0;
                 cout << "\nARP\n";//=14
                 for (int save = 14; save <= 50; save++) {
-                    arp_rarp[count] = dat[save];
-                    count++;
+                    arp_rarp[count1] = dat[save];
+                    count1++;
                 }
                 /*
                 for(int y=0;y<arr_size;y++){
@@ -548,12 +557,12 @@ int main() {
                 break;
 
             case IPV6:
-                count = 0;
+                count1 = 0;
                 cout << "IPV6\n" << endl;//=had to use a checksum that gives as th result 355
                 for (int save = 14; save <= arr_size; save++) {
-                    icmpv4[count] = dat[save];
-                    ipv6[count]=dat[save];
-                    count++;
+                    icmpv4[count1] = dat[save];
+                    ipv6[count1]=dat[save];
+                    count1++;
                 }
                 for (int i = 0; i < arr_size; i++) {
                     //printf("%02x", icmpv4[i]);
@@ -597,7 +606,7 @@ int main() {
                 }
                 cout<<binsum;
                 cout << "\n6168 bytes\nnext header:\n";
-                    printf("%i\n",ipv6[6]);
+                printf("%i\n",ipv6[6]);
                 switch(ipv6[6]){
                     case 58:
                         cout<<"icmpv6\n";
@@ -696,7 +705,7 @@ int main() {
                         cout<<"non readable";
                 }
 
-                
+
                 break;
             case 2:
                 printf("\n%i\n",ipv6[26]);
@@ -758,5 +767,11 @@ int main() {
         }
         system("pause");
 
+    }
+    if(udpflag==1){
+        cout<<"hola udp";
+    }
+    if(tcpflag==1){
+        cout<<"hola tcp"<<endl;
     }
 }

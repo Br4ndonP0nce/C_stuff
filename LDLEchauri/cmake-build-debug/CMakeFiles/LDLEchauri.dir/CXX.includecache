@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Brandon/CLionProjects/LDLEchauri/ldl.h
+iostream
+-
+stdexcept
+-
+
+C:/Users/Brandon/CLionProjects/LDLEchauri/main.cpp
+iostream
+-
+ldl.h
+C:/Users/Brandon/CLionProjects/LDLEchauri/ldl.h
+

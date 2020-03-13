@@ -3,6 +3,7 @@
 
 CMakeFiles/testfield.dir/dato.cpp.obj: ../dato.cpp
 
+CMakeFiles/testfield.dir/main.cpp.obj: ../ldl.h
 CMakeFiles/testfield.dir/main.cpp.obj: ../main.cpp
 
 CMakeFiles/testfield.dir/nodo.cpp.obj: ../dato.h

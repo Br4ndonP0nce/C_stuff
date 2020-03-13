@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Brandon/CLionProjects/GracielaPractica1/main.cpp
+iostream
+-
+stdio.h
+-
+conio.h
+-
+string
+-
+fstream
+-
+time.h
+-
+windows.h
+-
+
